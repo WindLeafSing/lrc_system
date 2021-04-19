@@ -25,7 +25,13 @@ static const char* FileSystem_method_names[] = {
   "/coordinator.FileSystem/createDir",
   "/coordinator.FileSystem/uploadStripe",
   "/coordinator.FileSystem/downloadStripe",
+  "/coordinator.FileSystem/downloadStripeWithHint",
   "/coordinator.FileSystem/deleteStripe",
+  "/coordinator.FileSystem/uploadCheck",
+  "/coordinator.FileSystem/reportblocktransfer",
+  "/coordinator.FileSystem/listStripe",
+  "/coordinator.FileSystem/listAllStripes",
+  "/coordinator.FileSystem/transitionup",
 };
 
 std::unique_ptr< FileSystem::Stub> FileSystem::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -38,7 +44,13 @@ FileSystem::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   : channel_(channel), rpcmethod_createDir_(FileSystem_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_uploadStripe_(FileSystem_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_downloadStripe_(FileSystem_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteStripe_(FileSystem_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_downloadStripeWithHint_(FileSystem_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteStripe_(FileSystem_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_uploadCheck_(FileSystem_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_reportblocktransfer_(FileSystem_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listStripe_(FileSystem_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listAllStripes_(FileSystem_method_names[8], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_transitionup_(FileSystem_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status FileSystem::Stub::createDir(::grpc::ClientContext* context, const ::coordinator::Path& request, ::coordinator::RequestResult* response) {
@@ -125,6 +137,34 @@ void FileSystem::Stub::experimental_async::downloadStripe(::grpc::ClientContext*
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_downloadStripe_, context, request, false);
 }
 
+::grpc::Status FileSystem::Stub::downloadStripeWithHint(::grpc::ClientContext* context, const ::coordinator::StripeIdWithHint& request, ::coordinator::StripeLocation* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_downloadStripeWithHint_, context, request, response);
+}
+
+void FileSystem::Stub::experimental_async::downloadStripeWithHint(::grpc::ClientContext* context, const ::coordinator::StripeIdWithHint* request, ::coordinator::StripeLocation* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_downloadStripeWithHint_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::downloadStripeWithHint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::StripeLocation* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_downloadStripeWithHint_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::downloadStripeWithHint(::grpc::ClientContext* context, const ::coordinator::StripeIdWithHint* request, ::coordinator::StripeLocation* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_downloadStripeWithHint_, context, request, response, reactor);
+}
+
+void FileSystem::Stub::experimental_async::downloadStripeWithHint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::StripeLocation* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_downloadStripeWithHint_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::StripeLocation>* FileSystem::Stub::AsyncdownloadStripeWithHintRaw(::grpc::ClientContext* context, const ::coordinator::StripeIdWithHint& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_downloadStripeWithHint_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::StripeLocation>* FileSystem::Stub::PrepareAsyncdownloadStripeWithHintRaw(::grpc::ClientContext* context, const ::coordinator::StripeIdWithHint& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_downloadStripeWithHint_, context, request, false);
+}
+
 ::grpc::Status FileSystem::Stub::deleteStripe(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::coordinator::RequestResult* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_deleteStripe_, context, request, response);
 }
@@ -153,6 +193,134 @@ void FileSystem::Stub::experimental_async::deleteStripe(::grpc::ClientContext* c
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_deleteStripe_, context, request, false);
 }
 
+::grpc::Status FileSystem::Stub::uploadCheck(::grpc::ClientContext* context, const ::coordinator::StripeInfo& request, ::coordinator::RequestResult* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_uploadCheck_, context, request, response);
+}
+
+void FileSystem::Stub::experimental_async::uploadCheck(::grpc::ClientContext* context, const ::coordinator::StripeInfo* request, ::coordinator::RequestResult* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_uploadCheck_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::uploadCheck(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::RequestResult* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_uploadCheck_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::uploadCheck(::grpc::ClientContext* context, const ::coordinator::StripeInfo* request, ::coordinator::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_uploadCheck_, context, request, response, reactor);
+}
+
+void FileSystem::Stub::experimental_async::uploadCheck(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_uploadCheck_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::RequestResult>* FileSystem::Stub::AsyncuploadCheckRaw(::grpc::ClientContext* context, const ::coordinator::StripeInfo& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_uploadCheck_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::RequestResult>* FileSystem::Stub::PrepareAsyncuploadCheckRaw(::grpc::ClientContext* context, const ::coordinator::StripeInfo& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_uploadCheck_, context, request, false);
+}
+
+::grpc::Status FileSystem::Stub::reportblocktransfer(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::coordinator::RequestResult* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_reportblocktransfer_, context, request, response);
+}
+
+void FileSystem::Stub::experimental_async::reportblocktransfer(::grpc::ClientContext* context, const ::coordinator::StripeId* request, ::coordinator::RequestResult* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_reportblocktransfer_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::reportblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::RequestResult* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_reportblocktransfer_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::reportblocktransfer(::grpc::ClientContext* context, const ::coordinator::StripeId* request, ::coordinator::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_reportblocktransfer_, context, request, response, reactor);
+}
+
+void FileSystem::Stub::experimental_async::reportblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_reportblocktransfer_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::RequestResult>* FileSystem::Stub::AsyncreportblocktransferRaw(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_reportblocktransfer_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::RequestResult>* FileSystem::Stub::PrepareAsyncreportblocktransferRaw(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_reportblocktransfer_, context, request, false);
+}
+
+::grpc::Status FileSystem::Stub::listStripe(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::coordinator::StripeLocation* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_listStripe_, context, request, response);
+}
+
+void FileSystem::Stub::experimental_async::listStripe(::grpc::ClientContext* context, const ::coordinator::StripeId* request, ::coordinator::StripeLocation* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_listStripe_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::listStripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::StripeLocation* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_listStripe_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::listStripe(::grpc::ClientContext* context, const ::coordinator::StripeId* request, ::coordinator::StripeLocation* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_listStripe_, context, request, response, reactor);
+}
+
+void FileSystem::Stub::experimental_async::listStripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::StripeLocation* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_listStripe_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::StripeLocation>* FileSystem::Stub::AsynclistStripeRaw(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_listStripe_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::StripeLocation>* FileSystem::Stub::PrepareAsynclistStripeRaw(::grpc::ClientContext* context, const ::coordinator::StripeId& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_listStripe_, context, request, false);
+}
+
+::grpc::ClientReader< ::coordinator::StripeLocation>* FileSystem::Stub::listAllStripesRaw(::grpc::ClientContext* context, const ::coordinator::ListAllStripeCMD& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), rpcmethod_listAllStripes_, context, request);
+}
+
+void FileSystem::Stub::experimental_async::listAllStripes(::grpc::ClientContext* context, ::coordinator::ListAllStripeCMD* request, ::grpc::experimental::ClientReadReactor< ::coordinator::StripeLocation>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::coordinator::StripeLocation>::Create(stub_->channel_.get(), stub_->rpcmethod_listAllStripes_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::coordinator::StripeLocation>* FileSystem::Stub::AsynclistAllStripesRaw(::grpc::ClientContext* context, const ::coordinator::ListAllStripeCMD& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_listAllStripes_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::coordinator::StripeLocation>* FileSystem::Stub::PrepareAsynclistAllStripesRaw(::grpc::ClientContext* context, const ::coordinator::ListAllStripeCMD& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::coordinator::StripeLocation>::Create(channel_.get(), cq, rpcmethod_listAllStripes_, context, request, false, nullptr);
+}
+
+::grpc::Status FileSystem::Stub::transitionup(::grpc::ClientContext* context, const ::coordinator::TransitionUpCMD& request, ::coordinator::RequestResult* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_transitionup_, context, request, response);
+}
+
+void FileSystem::Stub::experimental_async::transitionup(::grpc::ClientContext* context, const ::coordinator::TransitionUpCMD* request, ::coordinator::RequestResult* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_transitionup_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::transitionup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::RequestResult* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_transitionup_, context, request, response, std::move(f));
+}
+
+void FileSystem::Stub::experimental_async::transitionup(::grpc::ClientContext* context, const ::coordinator::TransitionUpCMD* request, ::coordinator::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_transitionup_, context, request, response, reactor);
+}
+
+void FileSystem::Stub::experimental_async::transitionup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::coordinator::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_transitionup_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::RequestResult>* FileSystem::Stub::AsynctransitionupRaw(::grpc::ClientContext* context, const ::coordinator::TransitionUpCMD& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_transitionup_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::coordinator::RequestResult>* FileSystem::Stub::PrepareAsynctransitionupRaw(::grpc::ClientContext* context, const ::coordinator::TransitionUpCMD& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::coordinator::RequestResult>::Create(channel_.get(), cq, rpcmethod_transitionup_, context, request, false);
+}
+
 FileSystem::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FileSystem_method_names[0],
@@ -172,8 +340,38 @@ FileSystem::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       FileSystem_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< FileSystem::Service, ::coordinator::StripeIdWithHint, ::coordinator::StripeLocation>(
+          std::mem_fn(&FileSystem::Service::downloadStripeWithHint), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      FileSystem_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< FileSystem::Service, ::coordinator::StripeId, ::coordinator::RequestResult>(
           std::mem_fn(&FileSystem::Service::deleteStripe), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      FileSystem_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< FileSystem::Service, ::coordinator::StripeInfo, ::coordinator::RequestResult>(
+          std::mem_fn(&FileSystem::Service::uploadCheck), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      FileSystem_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< FileSystem::Service, ::coordinator::StripeId, ::coordinator::RequestResult>(
+          std::mem_fn(&FileSystem::Service::reportblocktransfer), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      FileSystem_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< FileSystem::Service, ::coordinator::StripeId, ::coordinator::StripeLocation>(
+          std::mem_fn(&FileSystem::Service::listStripe), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      FileSystem_method_names[8],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< FileSystem::Service, ::coordinator::ListAllStripeCMD, ::coordinator::StripeLocation>(
+          std::mem_fn(&FileSystem::Service::listAllStripes), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      FileSystem_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< FileSystem::Service, ::coordinator::TransitionUpCMD, ::coordinator::RequestResult>(
+          std::mem_fn(&FileSystem::Service::transitionup), this)));
 }
 
 FileSystem::Service::~Service() {
@@ -200,11 +398,69 @@ FileSystem::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status FileSystem::Service::downloadStripeWithHint(::grpc::ServerContext* context, const ::coordinator::StripeIdWithHint* request, ::coordinator::StripeLocation* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status FileSystem::Service::deleteStripe(::grpc::ServerContext* context, const ::coordinator::StripeId* request, ::coordinator::RequestResult* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status FileSystem::Service::uploadCheck(::grpc::ServerContext* context, const ::coordinator::StripeInfo* request, ::coordinator::RequestResult* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status FileSystem::Service::reportblocktransfer(::grpc::ServerContext* context, const ::coordinator::StripeId* request, ::coordinator::RequestResult* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status FileSystem::Service::listStripe(::grpc::ServerContext* context, const ::coordinator::StripeId* request, ::coordinator::StripeLocation* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status FileSystem::Service::listAllStripes(::grpc::ServerContext* context, const ::coordinator::ListAllStripeCMD* request, ::grpc::ServerWriter< ::coordinator::StripeLocation>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status FileSystem::Service::transitionup(::grpc::ServerContext* context, const ::coordinator::TransitionUpCMD* request, ::coordinator::RequestResult* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+std::unique_ptr< FromDataNode::Stub> FromDataNode::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< FromDataNode::Stub> stub(new FromDataNode::Stub(channel));
+  return stub;
+}
+
+FromDataNode::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel){}
+
+FromDataNode::Service::Service() {
+}
+
+FromDataNode::Service::~Service() {
 }
 
 

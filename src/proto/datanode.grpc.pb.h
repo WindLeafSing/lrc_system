@@ -26,5 +26,1837 @@
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
+namespace datanode {
+
+// 
+class FromDataNode final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "datanode.FromDataNode";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+    };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+  };
+  typedef Service AsyncService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef Service CallbackService;
+  #endif
+
+  typedef Service ExperimentalCallbackService;
+  typedef Service StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef Service StreamedService;
+};
+
+// From Coodinator to DN
+class FromCoodinator final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "datanode.FromCoodinator";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    // deal with dir creating too
+    virtual ::grpc::Status handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asynchandleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsynchandleblocktransferRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsynchandleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsynchandleblocktransferRaw(context, request, cq));
+    }
+    virtual ::grpc::Status handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asynchandleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsynchandleblockpullRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsynchandleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsynchandleblockpullRaw(context, request, cq));
+    }
+    //  rpc createDir(Path) returns(RequestResult);
+    virtual ::grpc::Status clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asyncclearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsyncclearallstripeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsyncclearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsyncclearallstripeRaw(context, request, cq));
+    }
+    virtual ::grpc::Status dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asyncdolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsyncdolocallyrepairRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsyncdolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsyncdolocallyrepairRaw(context, request, cq));
+    }
+    virtual ::grpc::Status docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asyncdocompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsyncdocompleterepairRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsyncdocompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsyncdocompleterepairRaw(context, request, cq));
+    }
+    virtual ::grpc::Status clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asyncclearstripe(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsyncclearstripeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsyncclearstripe(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsyncclearstripeRaw(context, request, cq));
+    }
+    virtual ::grpc::Status checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asynccheckalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(AsynccheckaliveRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsynccheckalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsynccheckaliveRaw(context, request, cq));
+    }
+    virtual ::grpc::Status pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP& request, ::datanode::RequestResult* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> Asyncpull_perform_push(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(Asyncpull_perform_pushRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>> PrepareAsyncpull_perform_push(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>>(PrepareAsyncpull_perform_pushRaw(context, request, cq));
+    }
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+      // deal with dir creating too
+      virtual void handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void handleblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void handleblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void handleblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void handleblockpull(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void handleblockpull(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void handleblockpull(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      //  rpc createDir(Path) returns(RequestResult);
+      virtual void clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void clearallstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void clearallstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void clearallstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void dolocallyrepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void dolocallyrepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void dolocallyrepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void docompleterepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void docompleterepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void docompleterepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void clearstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void clearstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void clearstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void checkalive(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void checkalive(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void checkalive(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void pull_perform_push(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void pull_perform_push(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void pull_perform_push(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+    };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsynchandleblocktransferRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsynchandleblocktransferRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsynchandleblockpullRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsynchandleblockpullRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsyncclearallstripeRaw(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsyncclearallstripeRaw(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsyncdolocallyrepairRaw(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsyncdolocallyrepairRaw(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsyncdocompleterepairRaw(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsyncdocompleterepairRaw(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsyncclearstripeRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsyncclearstripeRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* AsynccheckaliveRaw(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsynccheckaliveRaw(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* Asyncpull_perform_pushRaw(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datanode::RequestResult>* PrepareAsyncpull_perform_pushRaw(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) = 0;
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    ::grpc::Status handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asynchandleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsynchandleblocktransferRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsynchandleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsynchandleblocktransferRaw(context, request, cq));
+    }
+    ::grpc::Status handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asynchandleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsynchandleblockpullRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsynchandleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsynchandleblockpullRaw(context, request, cq));
+    }
+    ::grpc::Status clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asyncclearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsyncclearallstripeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsyncclearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsyncclearallstripeRaw(context, request, cq));
+    }
+    ::grpc::Status dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asyncdolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsyncdolocallyrepairRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsyncdolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsyncdolocallyrepairRaw(context, request, cq));
+    }
+    ::grpc::Status docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asyncdocompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsyncdocompleterepairRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsyncdocompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsyncdocompleterepairRaw(context, request, cq));
+    }
+    ::grpc::Status clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asyncclearstripe(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsyncclearstripeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsyncclearstripe(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsyncclearstripeRaw(context, request, cq));
+    }
+    ::grpc::Status checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asynccheckalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(AsynccheckaliveRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsynccheckalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsynccheckaliveRaw(context, request, cq));
+    }
+    ::grpc::Status pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP& request, ::datanode::RequestResult* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> Asyncpull_perform_push(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(Asyncpull_perform_pushRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>> PrepareAsyncpull_perform_push(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>>(PrepareAsyncpull_perform_pushRaw(context, request, cq));
+    }
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+      void handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void handleblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void handleblocktransfer(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void handleblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void handleblocktransfer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void handleblockpull(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void handleblockpull(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void handleblockpull(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void handleblockpull(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void clearallstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void clearallstripe(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void clearallstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void clearallstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void dolocallyrepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void dolocallyrepair(::grpc::ClientContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void dolocallyrepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void dolocallyrepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void docompleterepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void docompleterepair(::grpc::ClientContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void docompleterepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void docompleterepair(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void clearstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void clearstripe(::grpc::ClientContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void clearstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void clearstripe(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void checkalive(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void checkalive(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void checkalive(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void checkalive(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      void pull_perform_push(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void pull_perform_push(::grpc::ClientContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void pull_perform_push(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void pull_perform_push(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datanode::RequestResult* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsynchandleblocktransferRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsynchandleblocktransferRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsynchandleblockpullRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsynchandleblockpullRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsyncclearallstripeRaw(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsyncclearallstripeRaw(::grpc::ClientContext* context, const ::datanode::ClearallstripeCMD& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsyncdolocallyrepairRaw(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsyncdolocallyrepairRaw(::grpc::ClientContext* context, const ::datanode::NodesLocation& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsyncdocompleterepairRaw(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsyncdocompleterepairRaw(::grpc::ClientContext* context, const ::datanode::StripeLocation& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsyncclearstripeRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsyncclearstripeRaw(::grpc::ClientContext* context, const ::datanode::StripeId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* AsynccheckaliveRaw(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsynccheckaliveRaw(::grpc::ClientContext* context, const ::datanode::CheckaliveCMD& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* Asyncpull_perform_pushRaw(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datanode::RequestResult>* PrepareAsyncpull_perform_pushRaw(::grpc::ClientContext* context, const ::datanode::OP& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_handleblocktransfer_;
+    const ::grpc::internal::RpcMethod rpcmethod_handleblockpull_;
+    const ::grpc::internal::RpcMethod rpcmethod_clearallstripe_;
+    const ::grpc::internal::RpcMethod rpcmethod_dolocallyrepair_;
+    const ::grpc::internal::RpcMethod rpcmethod_docompleterepair_;
+    const ::grpc::internal::RpcMethod rpcmethod_clearstripe_;
+    const ::grpc::internal::RpcMethod rpcmethod_checkalive_;
+    const ::grpc::internal::RpcMethod rpcmethod_pull_perform_push_;
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+    // deal with dir creating too
+    virtual ::grpc::Status handleblocktransfer(::grpc::ServerContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response);
+    virtual ::grpc::Status handleblockpull(::grpc::ServerContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response);
+    //  rpc createDir(Path) returns(RequestResult);
+    virtual ::grpc::Status clearallstripe(::grpc::ServerContext* context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response);
+    virtual ::grpc::Status dolocallyrepair(::grpc::ServerContext* context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response);
+    virtual ::grpc::Status docompleterepair(::grpc::ServerContext* context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response);
+    virtual ::grpc::Status clearstripe(::grpc::ServerContext* context, const ::datanode::StripeId* request, ::datanode::RequestResult* response);
+    virtual ::grpc::Status checkalive(::grpc::ServerContext* context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response);
+    virtual ::grpc::Status pull_perform_push(::grpc::ServerContext* context, const ::datanode::OP* request, ::datanode::RequestResult* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_handleblocktransfer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_handleblocktransfer() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_handleblocktransfer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblocktransfer(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requesthandleblocktransfer(::grpc::ServerContext* context, ::datanode::StripeId* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_handleblockpull : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_handleblockpull() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_handleblockpull() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblockpull(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requesthandleblockpull(::grpc::ServerContext* context, ::datanode::StripeId* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_clearallstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_clearallstripe() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_clearallstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearallstripe(::grpc::ServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestclearallstripe(::grpc::ServerContext* context, ::datanode::ClearallstripeCMD* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_dolocallyrepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_dolocallyrepair() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_dolocallyrepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status dolocallyrepair(::grpc::ServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestdolocallyrepair(::grpc::ServerContext* context, ::datanode::NodesLocation* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_docompleterepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_docompleterepair() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_docompleterepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status docompleterepair(::grpc::ServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestdocompleterepair(::grpc::ServerContext* context, ::datanode::StripeLocation* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_clearstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_clearstripe() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_clearstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearstripe(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestclearstripe(::grpc::ServerContext* context, ::datanode::StripeId* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_checkalive : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_checkalive() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_checkalive() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status checkalive(::grpc::ServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestcheckalive(::grpc::ServerContext* context, ::datanode::CheckaliveCMD* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_pull_perform_push : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_pull_perform_push() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_pull_perform_push() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status pull_perform_push(::grpc::ServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestpull_perform_push(::grpc::ServerContext* context, ::datanode::OP* request, ::grpc::ServerAsyncResponseWriter< ::datanode::RequestResult>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_handleblocktransfer<WithAsyncMethod_handleblockpull<WithAsyncMethod_clearallstripe<WithAsyncMethod_dolocallyrepair<WithAsyncMethod_docompleterepair<WithAsyncMethod_clearstripe<WithAsyncMethod_checkalive<WithAsyncMethod_pull_perform_push<Service > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_handleblocktransfer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_handleblocktransfer() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::StripeId* request, ::datanode::RequestResult* response) { return this->handleblocktransfer(context, request, response); }));}
+    void SetMessageAllocatorFor_handleblocktransfer(
+        ::grpc::experimental::MessageAllocator< ::datanode::StripeId, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_handleblocktransfer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblocktransfer(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* handleblocktransfer(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* handleblocktransfer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_handleblockpull : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_handleblockpull() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::StripeId* request, ::datanode::RequestResult* response) { return this->handleblockpull(context, request, response); }));}
+    void SetMessageAllocatorFor_handleblockpull(
+        ::grpc::experimental::MessageAllocator< ::datanode::StripeId, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_handleblockpull() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblockpull(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* handleblockpull(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* handleblockpull(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_clearallstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_clearallstripe() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::ClearallstripeCMD, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::ClearallstripeCMD* request, ::datanode::RequestResult* response) { return this->clearallstripe(context, request, response); }));}
+    void SetMessageAllocatorFor_clearallstripe(
+        ::grpc::experimental::MessageAllocator< ::datanode::ClearallstripeCMD, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::ClearallstripeCMD, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_clearallstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearallstripe(::grpc::ServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* clearallstripe(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* clearallstripe(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_dolocallyrepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_dolocallyrepair() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::NodesLocation, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::NodesLocation* request, ::datanode::RequestResult* response) { return this->dolocallyrepair(context, request, response); }));}
+    void SetMessageAllocatorFor_dolocallyrepair(
+        ::grpc::experimental::MessageAllocator< ::datanode::NodesLocation, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::NodesLocation, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_dolocallyrepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status dolocallyrepair(::grpc::ServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* dolocallyrepair(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* dolocallyrepair(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_docompleterepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_docompleterepair() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeLocation, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::StripeLocation* request, ::datanode::RequestResult* response) { return this->docompleterepair(context, request, response); }));}
+    void SetMessageAllocatorFor_docompleterepair(
+        ::grpc::experimental::MessageAllocator< ::datanode::StripeLocation, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeLocation, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_docompleterepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status docompleterepair(::grpc::ServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* docompleterepair(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* docompleterepair(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_clearstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_clearstripe() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::StripeId* request, ::datanode::RequestResult* response) { return this->clearstripe(context, request, response); }));}
+    void SetMessageAllocatorFor_clearstripe(
+        ::grpc::experimental::MessageAllocator< ::datanode::StripeId, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_clearstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearstripe(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* clearstripe(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* clearstripe(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_checkalive : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_checkalive() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::CheckaliveCMD, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::CheckaliveCMD* request, ::datanode::RequestResult* response) { return this->checkalive(context, request, response); }));}
+    void SetMessageAllocatorFor_checkalive(
+        ::grpc::experimental::MessageAllocator< ::datanode::CheckaliveCMD, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::CheckaliveCMD, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_checkalive() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status checkalive(::grpc::ServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* checkalive(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* checkalive(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_pull_perform_push : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_pull_perform_push() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::datanode::OP, ::datanode::RequestResult>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::datanode::OP* request, ::datanode::RequestResult* response) { return this->pull_perform_push(context, request, response); }));}
+    void SetMessageAllocatorFor_pull_perform_push(
+        ::grpc::experimental::MessageAllocator< ::datanode::OP, ::datanode::RequestResult>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::datanode::OP, ::datanode::RequestResult>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_pull_perform_push() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status pull_perform_push(::grpc::ServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* pull_perform_push(
+      ::grpc::CallbackServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* pull_perform_push(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_handleblocktransfer<ExperimentalWithCallbackMethod_handleblockpull<ExperimentalWithCallbackMethod_clearallstripe<ExperimentalWithCallbackMethod_dolocallyrepair<ExperimentalWithCallbackMethod_docompleterepair<ExperimentalWithCallbackMethod_clearstripe<ExperimentalWithCallbackMethod_checkalive<ExperimentalWithCallbackMethod_pull_perform_push<Service > > > > > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_handleblocktransfer<ExperimentalWithCallbackMethod_handleblockpull<ExperimentalWithCallbackMethod_clearallstripe<ExperimentalWithCallbackMethod_dolocallyrepair<ExperimentalWithCallbackMethod_docompleterepair<ExperimentalWithCallbackMethod_clearstripe<ExperimentalWithCallbackMethod_checkalive<ExperimentalWithCallbackMethod_pull_perform_push<Service > > > > > > > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_handleblocktransfer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_handleblocktransfer() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_handleblocktransfer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblocktransfer(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_handleblockpull : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_handleblockpull() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_handleblockpull() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblockpull(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_clearallstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_clearallstripe() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_clearallstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearallstripe(::grpc::ServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_dolocallyrepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_dolocallyrepair() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_dolocallyrepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status dolocallyrepair(::grpc::ServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_docompleterepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_docompleterepair() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_docompleterepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status docompleterepair(::grpc::ServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_clearstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_clearstripe() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_clearstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearstripe(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_checkalive : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_checkalive() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_checkalive() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status checkalive(::grpc::ServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_pull_perform_push : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_pull_perform_push() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_pull_perform_push() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status pull_perform_push(::grpc::ServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_handleblocktransfer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_handleblocktransfer() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_handleblocktransfer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblocktransfer(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requesthandleblocktransfer(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_handleblockpull : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_handleblockpull() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_handleblockpull() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblockpull(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requesthandleblockpull(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_clearallstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_clearallstripe() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_clearallstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearallstripe(::grpc::ServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestclearallstripe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_dolocallyrepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_dolocallyrepair() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_dolocallyrepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status dolocallyrepair(::grpc::ServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestdolocallyrepair(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_docompleterepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_docompleterepair() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_docompleterepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status docompleterepair(::grpc::ServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestdocompleterepair(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_clearstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_clearstripe() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_clearstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearstripe(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestclearstripe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_checkalive : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_checkalive() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_checkalive() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status checkalive(::grpc::ServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestcheckalive(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_pull_perform_push : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_pull_perform_push() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_pull_perform_push() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status pull_perform_push(::grpc::ServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestpull_perform_push(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_handleblocktransfer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_handleblocktransfer() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->handleblocktransfer(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_handleblocktransfer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblocktransfer(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* handleblocktransfer(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* handleblocktransfer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_handleblockpull : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_handleblockpull() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->handleblockpull(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_handleblockpull() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status handleblockpull(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* handleblockpull(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* handleblockpull(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_clearallstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_clearallstripe() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->clearallstripe(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_clearallstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearallstripe(::grpc::ServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* clearallstripe(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* clearallstripe(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_dolocallyrepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_dolocallyrepair() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->dolocallyrepair(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_dolocallyrepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status dolocallyrepair(::grpc::ServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* dolocallyrepair(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* dolocallyrepair(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_docompleterepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_docompleterepair() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->docompleterepair(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_docompleterepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status docompleterepair(::grpc::ServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* docompleterepair(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* docompleterepair(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_clearstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_clearstripe() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->clearstripe(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_clearstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status clearstripe(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* clearstripe(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* clearstripe(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_checkalive : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_checkalive() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->checkalive(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_checkalive() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status checkalive(::grpc::ServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* checkalive(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* checkalive(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_pull_perform_push : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_pull_perform_push() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->pull_perform_push(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_pull_perform_push() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status pull_perform_push(::grpc::ServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* pull_perform_push(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* pull_perform_push(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_handleblocktransfer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_handleblocktransfer() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_handleblocktransfer<BaseClass>::Streamedhandleblocktransfer, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_handleblocktransfer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status handleblocktransfer(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedhandleblocktransfer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::StripeId,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_handleblockpull : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_handleblockpull() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_handleblockpull<BaseClass>::Streamedhandleblockpull, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_handleblockpull() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status handleblockpull(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedhandleblockpull(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::StripeId,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_clearallstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_clearallstripe() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::ClearallstripeCMD, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_clearallstripe<BaseClass>::Streamedclearallstripe, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_clearallstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status clearallstripe(::grpc::ServerContext* /*context*/, const ::datanode::ClearallstripeCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedclearallstripe(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::ClearallstripeCMD,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_dolocallyrepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_dolocallyrepair() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::NodesLocation, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_dolocallyrepair<BaseClass>::Streameddolocallyrepair, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_dolocallyrepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status dolocallyrepair(::grpc::ServerContext* /*context*/, const ::datanode::NodesLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streameddolocallyrepair(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::NodesLocation,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_docompleterepair : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_docompleterepair() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::StripeLocation, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_docompleterepair<BaseClass>::Streameddocompleterepair, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_docompleterepair() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status docompleterepair(::grpc::ServerContext* /*context*/, const ::datanode::StripeLocation* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streameddocompleterepair(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::StripeLocation,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_clearstripe : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_clearstripe() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::StripeId, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_clearstripe<BaseClass>::Streamedclearstripe, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_clearstripe() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status clearstripe(::grpc::ServerContext* /*context*/, const ::datanode::StripeId* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedclearstripe(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::StripeId,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_checkalive : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_checkalive() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::CheckaliveCMD, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_checkalive<BaseClass>::Streamedcheckalive, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_checkalive() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status checkalive(::grpc::ServerContext* /*context*/, const ::datanode::CheckaliveCMD* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedcheckalive(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::CheckaliveCMD,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_pull_perform_push : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_pull_perform_push() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler< ::datanode::OP, ::datanode::RequestResult>(std::bind(&WithStreamedUnaryMethod_pull_perform_push<BaseClass>::Streamedpull_perform_push, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_pull_perform_push() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status pull_perform_push(::grpc::ServerContext* /*context*/, const ::datanode::OP* /*request*/, ::datanode::RequestResult* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedpull_perform_push(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datanode::OP,::datanode::RequestResult>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_handleblocktransfer<WithStreamedUnaryMethod_handleblockpull<WithStreamedUnaryMethod_clearallstripe<WithStreamedUnaryMethod_dolocallyrepair<WithStreamedUnaryMethod_docompleterepair<WithStreamedUnaryMethod_clearstripe<WithStreamedUnaryMethod_checkalive<WithStreamedUnaryMethod_pull_perform_push<Service > > > > > > > > StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef WithStreamedUnaryMethod_handleblocktransfer<WithStreamedUnaryMethod_handleblockpull<WithStreamedUnaryMethod_clearallstripe<WithStreamedUnaryMethod_dolocallyrepair<WithStreamedUnaryMethod_docompleterepair<WithStreamedUnaryMethod_clearstripe<WithStreamedUnaryMethod_checkalive<WithStreamedUnaryMethod_pull_perform_push<Service > > > > > > > > StreamedService;
+};
+
+// From Client to DN {typically for single block transfer}
+class FromClient final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "datanode.FromClient";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+    };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+  };
+  typedef Service AsyncService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef Service CallbackService;
+  #endif
+
+  typedef Service ExperimentalCallbackService;
+  typedef Service StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef Service StreamedService;
+};
+
+}  // namespace datanode
+
 
 #endif  // GRPC_datanode_2eproto__INCLUDED

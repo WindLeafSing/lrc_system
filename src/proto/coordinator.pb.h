@@ -31,6 +31,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -47,7 +48,7 @@ struct TableStruct_coordinator_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -55,6 +56,12 @@ struct TableStruct_coordinator_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_coordinator_2eproto;
 namespace coordinator {
+class ListAllStripeCMD;
+class ListAllStripeCMDDefaultTypeInternal;
+extern ListAllStripeCMDDefaultTypeInternal _ListAllStripeCMD_default_instance_;
+class NodesLocation;
+class NodesLocationDefaultTypeInternal;
+extern NodesLocationDefaultTypeInternal _NodesLocation_default_instance_;
 class Path;
 class PathDefaultTypeInternal;
 extern PathDefaultTypeInternal _Path_default_instance_;
@@ -64,23 +71,353 @@ extern RequestResultDefaultTypeInternal _RequestResult_default_instance_;
 class StripeId;
 class StripeIdDefaultTypeInternal;
 extern StripeIdDefaultTypeInternal _StripeId_default_instance_;
+class StripeIdWithHint;
+class StripeIdWithHintDefaultTypeInternal;
+extern StripeIdWithHintDefaultTypeInternal _StripeIdWithHint_default_instance_;
 class StripeInfo;
 class StripeInfoDefaultTypeInternal;
 extern StripeInfoDefaultTypeInternal _StripeInfo_default_instance_;
 class StripeLocation;
 class StripeLocationDefaultTypeInternal;
 extern StripeLocationDefaultTypeInternal _StripeLocation_default_instance_;
+class TransitionUpCMD;
+class TransitionUpCMDDefaultTypeInternal;
+extern TransitionUpCMDDefaultTypeInternal _TransitionUpCMD_default_instance_;
 }  // namespace coordinator
 PROTOBUF_NAMESPACE_OPEN
+template<> ::coordinator::ListAllStripeCMD* Arena::CreateMaybeMessage<::coordinator::ListAllStripeCMD>(Arena*);
+template<> ::coordinator::NodesLocation* Arena::CreateMaybeMessage<::coordinator::NodesLocation>(Arena*);
 template<> ::coordinator::Path* Arena::CreateMaybeMessage<::coordinator::Path>(Arena*);
 template<> ::coordinator::RequestResult* Arena::CreateMaybeMessage<::coordinator::RequestResult>(Arena*);
 template<> ::coordinator::StripeId* Arena::CreateMaybeMessage<::coordinator::StripeId>(Arena*);
+template<> ::coordinator::StripeIdWithHint* Arena::CreateMaybeMessage<::coordinator::StripeIdWithHint>(Arena*);
 template<> ::coordinator::StripeInfo* Arena::CreateMaybeMessage<::coordinator::StripeInfo>(Arena*);
 template<> ::coordinator::StripeLocation* Arena::CreateMaybeMessage<::coordinator::StripeLocation>(Arena*);
+template<> ::coordinator::TransitionUpCMD* Arena::CreateMaybeMessage<::coordinator::TransitionUpCMD>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace coordinator {
 
+enum TransitionUpCMD_MODE : int {
+  TransitionUpCMD_MODE_BASIC = 0,
+  TransitionUpCMD_MODE_BASIC_PART = 1,
+  TransitionUpCMD_MODE_DESIGNED = 2,
+  TransitionUpCMD_MODE_TransitionUpCMD_MODE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  TransitionUpCMD_MODE_TransitionUpCMD_MODE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool TransitionUpCMD_MODE_IsValid(int value);
+constexpr TransitionUpCMD_MODE TransitionUpCMD_MODE_MODE_MIN = TransitionUpCMD_MODE_BASIC;
+constexpr TransitionUpCMD_MODE TransitionUpCMD_MODE_MODE_MAX = TransitionUpCMD_MODE_DESIGNED;
+constexpr int TransitionUpCMD_MODE_MODE_ARRAYSIZE = TransitionUpCMD_MODE_MODE_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TransitionUpCMD_MODE_descriptor();
+template<typename T>
+inline const std::string& TransitionUpCMD_MODE_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, TransitionUpCMD_MODE>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function TransitionUpCMD_MODE_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    TransitionUpCMD_MODE_descriptor(), enum_t_value);
+}
+inline bool TransitionUpCMD_MODE_Parse(
+    const std::string& name, TransitionUpCMD_MODE* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TransitionUpCMD_MODE>(
+    TransitionUpCMD_MODE_descriptor(), name, value);
+}
 // ===================================================================
+
+class StripeIdWithHint :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:coordinator.StripeIdWithHint) */ {
+ public:
+  StripeIdWithHint();
+  virtual ~StripeIdWithHint();
+
+  StripeIdWithHint(const StripeIdWithHint& from);
+  StripeIdWithHint(StripeIdWithHint&& from) noexcept
+    : StripeIdWithHint() {
+    *this = ::std::move(from);
+  }
+
+  inline StripeIdWithHint& operator=(const StripeIdWithHint& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StripeIdWithHint& operator=(StripeIdWithHint&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StripeIdWithHint& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StripeIdWithHint* internal_default_instance() {
+    return reinterpret_cast<const StripeIdWithHint*>(
+               &_StripeIdWithHint_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(StripeIdWithHint& a, StripeIdWithHint& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StripeIdWithHint* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StripeIdWithHint* New() const final {
+    return CreateMaybeMessage<StripeIdWithHint>(nullptr);
+  }
+
+  StripeIdWithHint* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StripeIdWithHint>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StripeIdWithHint& from);
+  void MergeFrom(const StripeIdWithHint& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StripeIdWithHint* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "coordinator.StripeIdWithHint";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coordinator_2eproto);
+    return ::descriptor_table_coordinator_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStripeidFieldNumber = 1,
+    kBadlocationsFieldNumber = 2,
+  };
+  // .coordinator.StripeId stripeid = 1;
+  bool has_stripeid() const;
+  private:
+  bool _internal_has_stripeid() const;
+  public:
+  void clear_stripeid();
+  const ::coordinator::StripeId& stripeid() const;
+  ::coordinator::StripeId* release_stripeid();
+  ::coordinator::StripeId* mutable_stripeid();
+  void set_allocated_stripeid(::coordinator::StripeId* stripeid);
+  private:
+  const ::coordinator::StripeId& _internal_stripeid() const;
+  ::coordinator::StripeId* _internal_mutable_stripeid();
+  public:
+
+  // .coordinator.NodesLocation badlocations = 2;
+  bool has_badlocations() const;
+  private:
+  bool _internal_has_badlocations() const;
+  public:
+  void clear_badlocations();
+  const ::coordinator::NodesLocation& badlocations() const;
+  ::coordinator::NodesLocation* release_badlocations();
+  ::coordinator::NodesLocation* mutable_badlocations();
+  void set_allocated_badlocations(::coordinator::NodesLocation* badlocations);
+  private:
+  const ::coordinator::NodesLocation& _internal_badlocations() const;
+  ::coordinator::NodesLocation* _internal_mutable_badlocations();
+  public:
+
+  // @@protoc_insertion_point(class_scope:coordinator.StripeIdWithHint)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::coordinator::StripeId* stripeid_;
+  ::coordinator::NodesLocation* badlocations_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coordinator_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NodesLocation :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:coordinator.NodesLocation) */ {
+ public:
+  NodesLocation();
+  virtual ~NodesLocation();
+
+  NodesLocation(const NodesLocation& from);
+  NodesLocation(NodesLocation&& from) noexcept
+    : NodesLocation() {
+    *this = ::std::move(from);
+  }
+
+  inline NodesLocation& operator=(const NodesLocation& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline NodesLocation& operator=(NodesLocation&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const NodesLocation& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NodesLocation* internal_default_instance() {
+    return reinterpret_cast<const NodesLocation*>(
+               &_NodesLocation_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(NodesLocation& a, NodesLocation& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(NodesLocation* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NodesLocation* New() const final {
+    return CreateMaybeMessage<NodesLocation>(nullptr);
+  }
+
+  NodesLocation* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<NodesLocation>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const NodesLocation& from);
+  void MergeFrom(const NodesLocation& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NodesLocation* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "coordinator.NodesLocation";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coordinator_2eproto);
+    return ::descriptor_table_coordinator_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNodesUriFieldNumber = 1,
+  };
+  // repeated string NodesUri = 1;
+  int nodesuri_size() const;
+  private:
+  int _internal_nodesuri_size() const;
+  public:
+  void clear_nodesuri();
+  const std::string& nodesuri(int index) const;
+  std::string* mutable_nodesuri(int index);
+  void set_nodesuri(int index, const std::string& value);
+  void set_nodesuri(int index, std::string&& value);
+  void set_nodesuri(int index, const char* value);
+  void set_nodesuri(int index, const char* value, size_t size);
+  std::string* add_nodesuri();
+  void add_nodesuri(const std::string& value);
+  void add_nodesuri(std::string&& value);
+  void add_nodesuri(const char* value);
+  void add_nodesuri(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& nodesuri() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_nodesuri();
+  private:
+  const std::string& _internal_nodesuri(int index) const;
+  std::string* _internal_add_nodesuri();
+  public:
+
+  // @@protoc_insertion_point(class_scope:coordinator.NodesLocation)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> nodesuri_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coordinator_2eproto;
+};
+// -------------------------------------------------------------------
 
 class StripeId :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:coordinator.StripeId) */ {
@@ -124,7 +461,7 @@ class StripeId :
                &_StripeId_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(StripeId& a, StripeId& b) {
     a.Swap(&b);
@@ -252,7 +589,7 @@ class StripeInfo :
                &_StripeInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(StripeInfo& a, StripeInfo& b) {
     a.Swap(&b);
@@ -413,7 +750,7 @@ class StripeLocation :
                &_StripeLocation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(StripeLocation& a, StripeLocation& b) {
     a.Swap(&b);
@@ -608,7 +945,7 @@ class Path :
                &_Path_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(Path& a, Path& b) {
     a.Swap(&b);
@@ -743,7 +1080,7 @@ class RequestResult :
                &_RequestResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(RequestResult& a, RequestResult& b) {
     a.Swap(&b);
@@ -827,6 +1164,281 @@ class RequestResult :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_coordinator_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ListAllStripeCMD :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:coordinator.ListAllStripeCMD) */ {
+ public:
+  ListAllStripeCMD();
+  virtual ~ListAllStripeCMD();
+
+  ListAllStripeCMD(const ListAllStripeCMD& from);
+  ListAllStripeCMD(ListAllStripeCMD&& from) noexcept
+    : ListAllStripeCMD() {
+    *this = ::std::move(from);
+  }
+
+  inline ListAllStripeCMD& operator=(const ListAllStripeCMD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListAllStripeCMD& operator=(ListAllStripeCMD&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListAllStripeCMD& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ListAllStripeCMD* internal_default_instance() {
+    return reinterpret_cast<const ListAllStripeCMD*>(
+               &_ListAllStripeCMD_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(ListAllStripeCMD& a, ListAllStripeCMD& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListAllStripeCMD* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListAllStripeCMD* New() const final {
+    return CreateMaybeMessage<ListAllStripeCMD>(nullptr);
+  }
+
+  ListAllStripeCMD* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListAllStripeCMD>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListAllStripeCMD& from);
+  void MergeFrom(const ListAllStripeCMD& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListAllStripeCMD* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "coordinator.ListAllStripeCMD";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coordinator_2eproto);
+    return ::descriptor_table_coordinator_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:coordinator.ListAllStripeCMD)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coordinator_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TransitionUpCMD :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:coordinator.TransitionUpCMD) */ {
+ public:
+  TransitionUpCMD();
+  virtual ~TransitionUpCMD();
+
+  TransitionUpCMD(const TransitionUpCMD& from);
+  TransitionUpCMD(TransitionUpCMD&& from) noexcept
+    : TransitionUpCMD() {
+    *this = ::std::move(from);
+  }
+
+  inline TransitionUpCMD& operator=(const TransitionUpCMD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TransitionUpCMD& operator=(TransitionUpCMD&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const TransitionUpCMD& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TransitionUpCMD* internal_default_instance() {
+    return reinterpret_cast<const TransitionUpCMD*>(
+               &_TransitionUpCMD_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(TransitionUpCMD& a, TransitionUpCMD& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TransitionUpCMD* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TransitionUpCMD* New() const final {
+    return CreateMaybeMessage<TransitionUpCMD>(nullptr);
+  }
+
+  TransitionUpCMD* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TransitionUpCMD>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TransitionUpCMD& from);
+  void MergeFrom(const TransitionUpCMD& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransitionUpCMD* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "coordinator.TransitionUpCMD";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coordinator_2eproto);
+    return ::descriptor_table_coordinator_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef TransitionUpCMD_MODE MODE;
+  static constexpr MODE BASIC =
+    TransitionUpCMD_MODE_BASIC;
+  static constexpr MODE BASIC_PART =
+    TransitionUpCMD_MODE_BASIC_PART;
+  static constexpr MODE DESIGNED =
+    TransitionUpCMD_MODE_DESIGNED;
+  static inline bool MODE_IsValid(int value) {
+    return TransitionUpCMD_MODE_IsValid(value);
+  }
+  static constexpr MODE MODE_MIN =
+    TransitionUpCMD_MODE_MODE_MIN;
+  static constexpr MODE MODE_MAX =
+    TransitionUpCMD_MODE_MODE_MAX;
+  static constexpr int MODE_ARRAYSIZE =
+    TransitionUpCMD_MODE_MODE_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  MODE_descriptor() {
+    return TransitionUpCMD_MODE_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& MODE_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, MODE>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function MODE_Name.");
+    return TransitionUpCMD_MODE_Name(enum_t_value);
+  }
+  static inline bool MODE_Parse(const std::string& name,
+      MODE* value) {
+    return TransitionUpCMD_MODE_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kModeFieldNumber = 1,
+  };
+  // .coordinator.TransitionUpCMD.MODE mode = 1;
+  void clear_mode();
+  ::coordinator::TransitionUpCMD_MODE mode() const;
+  void set_mode(::coordinator::TransitionUpCMD_MODE value);
+  private:
+  ::coordinator::TransitionUpCMD_MODE _internal_mode() const;
+  void _internal_set_mode(::coordinator::TransitionUpCMD_MODE value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:coordinator.TransitionUpCMD)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  int mode_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coordinator_2eproto;
+};
 // ===================================================================
 
 
@@ -836,6 +1448,208 @@ class RequestResult :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// StripeIdWithHint
+
+// .coordinator.StripeId stripeid = 1;
+inline bool StripeIdWithHint::_internal_has_stripeid() const {
+  return this != internal_default_instance() && stripeid_ != nullptr;
+}
+inline bool StripeIdWithHint::has_stripeid() const {
+  return _internal_has_stripeid();
+}
+inline void StripeIdWithHint::clear_stripeid() {
+  if (GetArenaNoVirtual() == nullptr && stripeid_ != nullptr) {
+    delete stripeid_;
+  }
+  stripeid_ = nullptr;
+}
+inline const ::coordinator::StripeId& StripeIdWithHint::_internal_stripeid() const {
+  const ::coordinator::StripeId* p = stripeid_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::coordinator::StripeId*>(
+      &::coordinator::_StripeId_default_instance_);
+}
+inline const ::coordinator::StripeId& StripeIdWithHint::stripeid() const {
+  // @@protoc_insertion_point(field_get:coordinator.StripeIdWithHint.stripeid)
+  return _internal_stripeid();
+}
+inline ::coordinator::StripeId* StripeIdWithHint::release_stripeid() {
+  // @@protoc_insertion_point(field_release:coordinator.StripeIdWithHint.stripeid)
+  
+  ::coordinator::StripeId* temp = stripeid_;
+  stripeid_ = nullptr;
+  return temp;
+}
+inline ::coordinator::StripeId* StripeIdWithHint::_internal_mutable_stripeid() {
+  
+  if (stripeid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::coordinator::StripeId>(GetArenaNoVirtual());
+    stripeid_ = p;
+  }
+  return stripeid_;
+}
+inline ::coordinator::StripeId* StripeIdWithHint::mutable_stripeid() {
+  // @@protoc_insertion_point(field_mutable:coordinator.StripeIdWithHint.stripeid)
+  return _internal_mutable_stripeid();
+}
+inline void StripeIdWithHint::set_allocated_stripeid(::coordinator::StripeId* stripeid) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete stripeid_;
+  }
+  if (stripeid) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      stripeid = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, stripeid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  stripeid_ = stripeid;
+  // @@protoc_insertion_point(field_set_allocated:coordinator.StripeIdWithHint.stripeid)
+}
+
+// .coordinator.NodesLocation badlocations = 2;
+inline bool StripeIdWithHint::_internal_has_badlocations() const {
+  return this != internal_default_instance() && badlocations_ != nullptr;
+}
+inline bool StripeIdWithHint::has_badlocations() const {
+  return _internal_has_badlocations();
+}
+inline void StripeIdWithHint::clear_badlocations() {
+  if (GetArenaNoVirtual() == nullptr && badlocations_ != nullptr) {
+    delete badlocations_;
+  }
+  badlocations_ = nullptr;
+}
+inline const ::coordinator::NodesLocation& StripeIdWithHint::_internal_badlocations() const {
+  const ::coordinator::NodesLocation* p = badlocations_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::coordinator::NodesLocation*>(
+      &::coordinator::_NodesLocation_default_instance_);
+}
+inline const ::coordinator::NodesLocation& StripeIdWithHint::badlocations() const {
+  // @@protoc_insertion_point(field_get:coordinator.StripeIdWithHint.badlocations)
+  return _internal_badlocations();
+}
+inline ::coordinator::NodesLocation* StripeIdWithHint::release_badlocations() {
+  // @@protoc_insertion_point(field_release:coordinator.StripeIdWithHint.badlocations)
+  
+  ::coordinator::NodesLocation* temp = badlocations_;
+  badlocations_ = nullptr;
+  return temp;
+}
+inline ::coordinator::NodesLocation* StripeIdWithHint::_internal_mutable_badlocations() {
+  
+  if (badlocations_ == nullptr) {
+    auto* p = CreateMaybeMessage<::coordinator::NodesLocation>(GetArenaNoVirtual());
+    badlocations_ = p;
+  }
+  return badlocations_;
+}
+inline ::coordinator::NodesLocation* StripeIdWithHint::mutable_badlocations() {
+  // @@protoc_insertion_point(field_mutable:coordinator.StripeIdWithHint.badlocations)
+  return _internal_mutable_badlocations();
+}
+inline void StripeIdWithHint::set_allocated_badlocations(::coordinator::NodesLocation* badlocations) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete badlocations_;
+  }
+  if (badlocations) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      badlocations = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, badlocations, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  badlocations_ = badlocations;
+  // @@protoc_insertion_point(field_set_allocated:coordinator.StripeIdWithHint.badlocations)
+}
+
+// -------------------------------------------------------------------
+
+// NodesLocation
+
+// repeated string NodesUri = 1;
+inline int NodesLocation::_internal_nodesuri_size() const {
+  return nodesuri_.size();
+}
+inline int NodesLocation::nodesuri_size() const {
+  return _internal_nodesuri_size();
+}
+inline void NodesLocation::clear_nodesuri() {
+  nodesuri_.Clear();
+}
+inline std::string* NodesLocation::add_nodesuri() {
+  // @@protoc_insertion_point(field_add_mutable:coordinator.NodesLocation.NodesUri)
+  return _internal_add_nodesuri();
+}
+inline const std::string& NodesLocation::_internal_nodesuri(int index) const {
+  return nodesuri_.Get(index);
+}
+inline const std::string& NodesLocation::nodesuri(int index) const {
+  // @@protoc_insertion_point(field_get:coordinator.NodesLocation.NodesUri)
+  return _internal_nodesuri(index);
+}
+inline std::string* NodesLocation::mutable_nodesuri(int index) {
+  // @@protoc_insertion_point(field_mutable:coordinator.NodesLocation.NodesUri)
+  return nodesuri_.Mutable(index);
+}
+inline void NodesLocation::set_nodesuri(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:coordinator.NodesLocation.NodesUri)
+  nodesuri_.Mutable(index)->assign(value);
+}
+inline void NodesLocation::set_nodesuri(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:coordinator.NodesLocation.NodesUri)
+  nodesuri_.Mutable(index)->assign(std::move(value));
+}
+inline void NodesLocation::set_nodesuri(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  nodesuri_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:coordinator.NodesLocation.NodesUri)
+}
+inline void NodesLocation::set_nodesuri(int index, const char* value, size_t size) {
+  nodesuri_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:coordinator.NodesLocation.NodesUri)
+}
+inline std::string* NodesLocation::_internal_add_nodesuri() {
+  return nodesuri_.Add();
+}
+inline void NodesLocation::add_nodesuri(const std::string& value) {
+  nodesuri_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:coordinator.NodesLocation.NodesUri)
+}
+inline void NodesLocation::add_nodesuri(std::string&& value) {
+  nodesuri_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:coordinator.NodesLocation.NodesUri)
+}
+inline void NodesLocation::add_nodesuri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  nodesuri_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:coordinator.NodesLocation.NodesUri)
+}
+inline void NodesLocation::add_nodesuri(const char* value, size_t size) {
+  nodesuri_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:coordinator.NodesLocation.NodesUri)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+NodesLocation::nodesuri() const {
+  // @@protoc_insertion_point(field_list:coordinator.NodesLocation.NodesUri)
+  return nodesuri_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+NodesLocation::mutable_nodesuri() {
+  // @@protoc_insertion_point(field_mutable_list:coordinator.NodesLocation.NodesUri)
+  return &nodesuri_;
+}
+
+// -------------------------------------------------------------------
+
 // StripeId
 
 // int32 stripeid = 1;
@@ -1256,9 +2070,45 @@ inline void RequestResult::set_trueorfalse(bool value) {
   // @@protoc_insertion_point(field_set:coordinator.RequestResult.trueorfalse)
 }
 
+// -------------------------------------------------------------------
+
+// ListAllStripeCMD
+
+// -------------------------------------------------------------------
+
+// TransitionUpCMD
+
+// .coordinator.TransitionUpCMD.MODE mode = 1;
+inline void TransitionUpCMD::clear_mode() {
+  mode_ = 0;
+}
+inline ::coordinator::TransitionUpCMD_MODE TransitionUpCMD::_internal_mode() const {
+  return static_cast< ::coordinator::TransitionUpCMD_MODE >(mode_);
+}
+inline ::coordinator::TransitionUpCMD_MODE TransitionUpCMD::mode() const {
+  // @@protoc_insertion_point(field_get:coordinator.TransitionUpCMD.mode)
+  return _internal_mode();
+}
+inline void TransitionUpCMD::_internal_set_mode(::coordinator::TransitionUpCMD_MODE value) {
+  
+  mode_ = value;
+}
+inline void TransitionUpCMD::set_mode(::coordinator::TransitionUpCMD_MODE value) {
+  _internal_set_mode(value);
+  // @@protoc_insertion_point(field_set:coordinator.TransitionUpCMD.mode)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -1271,6 +2121,16 @@ inline void RequestResult::set_trueorfalse(bool value) {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace coordinator
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::coordinator::TransitionUpCMD_MODE> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::coordinator::TransitionUpCMD_MODE>() {
+  return ::coordinator::TransitionUpCMD_MODE_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

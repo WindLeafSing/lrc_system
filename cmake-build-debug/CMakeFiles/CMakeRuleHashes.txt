@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-a3eb9fac4347576dc0693b507707ecff ../src/proto/coordinator.pb.cc

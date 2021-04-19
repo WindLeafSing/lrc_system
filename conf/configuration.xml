@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root>
-    <properties>
-    <property>
-        <name>fs_uri</name>
-        <value>192.168.1.3:33333</value>
-    </property>
-    <property>
-        <name>log_path</name>
-        <value>E:\log</value>
-    </property>
-    </properties>
-</root>
+<properties>
+     <property datanode_uri="" datanodetransfer_port="22221" fs_uri="192.168.0.3:33333"
+     log_path="./log/logFile.txt" default_block_size="64" default.ecschema="4,2,2"/>
+</properties>

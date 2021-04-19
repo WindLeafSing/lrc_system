@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package datanode;
+
+//
+service FromDataNode{
+
+}
+
+//From Coodinator to DN
+service FromCoodinator{
+  //deal with dir creating too
+  rpc handleblocktransfer(StripeId) returns(RequestResult);
+  rpc handleblockpull(StripeId) returns(RequestResult);
+//  rpc createDir(Path) returns(RequestResult);
+  rpc clearallstripe(ClearallstripeCMD) returns(RequestResult);
+
+  rpc dolocallyrepair(NodesLocation) returns(RequestResult);
+
+  rpc docompleterepair(StripeLocation) returns(RequestResult);
+
+  rpc clearstripe(StripeId) returns(RequestResult);
+
+  rpc checkalive(CheckaliveCMD ) returns(RequestResult);
+
+  rpc pull_perform_push(OP) returns(RequestResult);
+
+
+}
+
+message CheckaliveCMD{
+
+}
+message PullPerformPushCMD{
+    NodesLocation src = 1;
+    Action op = 2;
+    NodesLocation dst = 3;
+    StripeInfo stripeinfo = 4;
+}
+message StripeId{
+  int32 stripeid = 1;
+}
+message StripeLocation{
+  repeated string dataLoc = 1;
+  repeated string localparityLoc = 2;
+  repeated string globalparityLoc = 3;
+}
+
+message NodesLocation{
+  repeated string NodesUri = 1;
+}
+
+message ClearallstripeCMD{
+
+}
+message Path{
+  string dstpath =1;
+}
+//From Client to DN {typically for single block transfer}
+service FromClient{
+
+
+}
+
+message OP{
+  repeated string from = 1;
+  repeated string to = 2;
+  enum CODEC{
+    NO = 0 ;
+    XOR = 1 ;
+    LRC = 2 ;
+    REUSE = 3;
+  }
+  CODEC op = 3;
+}
+
+message Action{
+  int32 op = 1;
+}
+message StripeInfo{
+  int32 stripeid = 1;
+  int32 stripe_k = 2;
+  int32 stripe_l = 3;
+  int32 stripe_g = 4;
+
+}
+
+message RequestResult{
+  bool trueorfalse=1;
+}

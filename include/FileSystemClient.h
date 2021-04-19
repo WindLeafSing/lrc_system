@@ -12,26 +12,30 @@
 #include "asio/thread_pool.hpp"
 #include "pugixml.hpp"
 #include <grpcpp/grpcpp.h>
-#include
+#include <asio/io_context.hpp>
 
-
+#include "erasurecoding/LRCCoder.h"
 
 #include "MetaInfo.h"
 #include "coordinator.grpc.pb.h"
 
+#include <spdlog/logger.h>
+#include <spdlog/sinks/basic_file_sink.h>
+
 namespace lrc{
     class FileSystemClient{
 
-        spdlog::logger m_client_logger;
         //for validation
         std::string m_meta_path ;
         std::string m_conf_path ;
 
+        asio::io_context m_ioc;
         //read from conf
         std::string m_fs_uri ; //  denotes coordinator
         std::string m_self_uri ;//denotes self
         std::string m_log_path ;// denotes log path
 
+        short m_dn_transferport;
         int m_default_blk_size;
 
         // cache filesystem metadata for validation
@@ -42,55 +46,59 @@ namespace lrc{
         // client-namenode stub
         // no client-datanode stub, because client can see a filesystem abstraction via coordinator
         std::unique_ptr<coordinator::FileSystem::Stub> m_fileSystem_ptr;
+        std::shared_ptr<spdlog::logger> m_client_logger;
 
         // need a socketfactory and a logger
     public:
-        FileSystemClient(const std::string & p_conf_path="/conf/configuration.xml",const std::string & p_fsimage_path="/history/fsimage.xml"):m_conf_path(p_conf_path)
+        FileSystemClient(const std::string & p_conf_path="./conf/configuration.xml",const std::string & p_fsimage_path="./meta/fsimage.xml"):m_conf_path(p_conf_path)
         {
             //parse config file
             pugi::xml_document doc;
             doc.load_file(p_conf_path.data(),pugi::parse_default,pugi::encoding_utf8);
 
-            pugi::xml_node root_node = doc.child("root");
-            pugi::xml_node properties_node = root_node.child("properties");
-
-            for(auto property_node = properties_node.child("property");property_node;properties_node.next_sibling())
+            pugi::xml_node properties_node = doc.child("properties");
+            auto property_node = properties_node.child("property");
+            for(auto attr = property_node.first_attribute();attr;attr=attr.next_attribute())
             {
-                auto prop_name = std::string(property_node.child("name").value());
-                auto prop_value = std::string(property_node.child("value").value());
+                auto prop_name = attr.name();
+                auto prop_value = attr.value();
 
-                if("fs_uri" == prop_name)
+                if(std::string{"fs_uri"} == prop_name)
                 {
                     m_fs_uri = prop_value;
-                }else if("log_path" == prop_name)
+                }else if(std::string{"log_path"} == prop_name)
                 {
                     m_log_path = prop_value;
-                }else if("default_block_size" == prop_name)
+                }else if(std::string{"default_block_size"} == prop_name)
                 {
                     m_default_blk_size=std::stoi(prop_value);
+                }else if(std::string{"datanodetransfer_port"}==prop_name)
+                {
+                    m_dn_transferport = std::stoi(prop_value);
                 }
             }
             auto channel = grpc::CreateChannel(m_fs_uri,grpc::InsecureChannelCredentials());
             m_fileSystem_ptr = coordinator::FileSystem::NewStub(channel);
-            m_client_logger = spdlog::
+            m_client_logger = spdlog::basic_logger_mt("client_logger",m_log_path.append(".client"),true);
         }
 
-
+    private:
         FileSystemClient(const FileSystemClient &) =  delete;
 
         FileSystemClient & operator=(const FileSystemClient &) =delete ;
 
         FileSystemClient(FileSystemClient &&) = delete ;
 
-        FileSystemClient & operator(FileSystemClient &&) = delete;
+        FileSystemClient & operator=(FileSystemClient &&) = delete;
 
-        ~FileSystemClient() ;
-
-
-        int UploadStripe(const std::string & srcpath,const std::string & dstpath,const ECSchema & ecschema);
+    public:
+        ~FileSystemClient() = default;
 
 
-        bool DownLoadStripe(const string & srcpath,const string & dstpath,int stripe_id);
+        bool UploadStripe(const std::string & srcpath,int stripeid,const ECSchema & ecschema);
+
+
+        bool DownLoadStripe(const std::string & srcpath,const std::string & dstpath,int stripe_id);
 
 
         bool CreateDir(const std::string & dstpath) ;

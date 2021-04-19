@@ -435,4 +435,473 @@ public:
   /**
    * This function may be used to obtain the underlying representation of the
    * serial port. This is intended to allow access to native serial port
-   * func                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+   * functionality that is not otherwise provided.
+   */
+  native_handle_type native_handle()
+  {
+    return impl_.get_service().native_handle(impl_.get_implementation());
+  }
+
+  /// Cancel all asynchronous operations associated with the serial port.
+  /**
+   * This function causes all outstanding asynchronous read or write operations
+   * to finish immediately, and the handlers for cancelled operations will be
+   * passed the asio::error::operation_aborted error.
+   *
+   * @throws asio::system_error Thrown on failure.
+   */
+  void cancel()
+  {
+    asio::error_code ec;
+    impl_.get_service().cancel(impl_.get_implementation(), ec);
+    asio::detail::throw_error(ec, "cancel");
+  }
+
+  /// Cancel all asynchronous operations associated with the serial port.
+  /**
+   * This function causes all outstanding asynchronous read or write operations
+   * to finish immediately, and the handlers for cancelled operations will be
+   * passed the asio::error::operation_aborted error.
+   *
+   * @param ec Set to indicate what error occurred, if any.
+   */
+  ASIO_SYNC_OP_VOID cancel(asio::error_code& ec)
+  {
+    impl_.get_service().cancel(impl_.get_implementation(), ec);
+    ASIO_SYNC_OP_VOID_RETURN(ec);
+  }
+
+  /// Send a break sequence to the serial port.
+  /**
+   * This function causes a break sequence of platform-specific duration to be
+   * sent out the serial port.
+   *
+   * @throws asio::system_error Thrown on failure.
+   */
+  void send_break()
+  {
+    asio::error_code ec;
+    impl_.get_service().send_break(impl_.get_implementation(), ec);
+    asio::detail::throw_error(ec, "send_break");
+  }
+
+  /// Send a break sequence to the serial port.
+  /**
+   * This function causes a break sequence of platform-specific duration to be
+   * sent out the serial port.
+   *
+   * @param ec Set to indicate what error occurred, if any.
+   */
+  ASIO_SYNC_OP_VOID send_break(asio::error_code& ec)
+  {
+    impl_.get_service().send_break(impl_.get_implementation(), ec);
+    ASIO_SYNC_OP_VOID_RETURN(ec);
+  }
+
+  /// Set an option on the serial port.
+  /**
+   * This function is used to set an option on the serial port.
+   *
+   * @param option The option value to be set on the serial port.
+   *
+   * @throws asio::system_error Thrown on failure.
+   *
+   * @sa SettableSerialPortOption @n
+   * asio::serial_port_base::baud_rate @n
+   * asio::serial_port_base::flow_control @n
+   * asio::serial_port_base::parity @n
+   * asio::serial_port_base::stop_bits @n
+   * asio::serial_port_base::character_size
+   */
+  template <typename SettableSerialPortOption>
+  void set_option(const SettableSerialPortOption& option)
+  {
+    asio::error_code ec;
+    impl_.get_service().set_option(impl_.get_implementation(), option, ec);
+    asio::detail::throw_error(ec, "set_option");
+  }
+
+  /// Set an option on the serial port.
+  /**
+   * This function is used to set an option on the serial port.
+   *
+   * @param option The option value to be set on the serial port.
+   *
+   * @param ec Set to indicate what error occurred, if any.
+   *
+   * @sa SettableSerialPortOption @n
+   * asio::serial_port_base::baud_rate @n
+   * asio::serial_port_base::flow_control @n
+   * asio::serial_port_base::parity @n
+   * asio::serial_port_base::stop_bits @n
+   * asio::serial_port_base::character_size
+   */
+  template <typename SettableSerialPortOption>
+  ASIO_SYNC_OP_VOID set_option(const SettableSerialPortOption& option,
+      asio::error_code& ec)
+  {
+    impl_.get_service().set_option(impl_.get_implementation(), option, ec);
+    ASIO_SYNC_OP_VOID_RETURN(ec);
+  }
+
+  /// Get an option from the serial port.
+  /**
+   * This function is used to get the current value of an option on the serial
+   * port.
+   *
+   * @param option The option value to be obtained from the serial port.
+   *
+   * @throws asio::system_error Thrown on failure.
+   *
+   * @sa GettableSerialPortOption @n
+   * asio::serial_port_base::baud_rate @n
+   * asio::serial_port_base::flow_control @n
+   * asio::serial_port_base::parity @n
+   * asio::serial_port_base::stop_bits @n
+   * asio::serial_port_base::character_size
+   */
+  template <typename GettableSerialPortOption>
+  void get_option(GettableSerialPortOption& option) const
+  {
+    asio::error_code ec;
+    impl_.get_service().get_option(impl_.get_implementation(), option, ec);
+    asio::detail::throw_error(ec, "get_option");
+  }
+
+  /// Get an option from the serial port.
+  /**
+   * This function is used to get the current value of an option on the serial
+   * port.
+   *
+   * @param option The option value to be obtained from the serial port.
+   *
+   * @param ec Set to indicate what error occurred, if any.
+   *
+   * @sa GettableSerialPortOption @n
+   * asio::serial_port_base::baud_rate @n
+   * asio::serial_port_base::flow_control @n
+   * asio::serial_port_base::parity @n
+   * asio::serial_port_base::stop_bits @n
+   * asio::serial_port_base::character_size
+   */
+  template <typename GettableSerialPortOption>
+  ASIO_SYNC_OP_VOID get_option(GettableSerialPortOption& option,
+      asio::error_code& ec) const
+  {
+    impl_.get_service().get_option(impl_.get_implementation(), option, ec);
+    ASIO_SYNC_OP_VOID_RETURN(ec);
+  }
+
+  /// Write some data to the serial port.
+  /**
+   * This function is used to write data to the serial port. The function call
+   * will block until one or more bytes of the data has been written
+   * successfully, or until an error occurs.
+   *
+   * @param buffers One or more data buffers to be written to the serial port.
+   *
+   * @returns The number of bytes written.
+   *
+   * @throws asio::system_error Thrown on failure. An error code of
+   * asio::error::eof indicates that the connection was closed by the
+   * peer.
+   *
+   * @note The write_some operation may not transmit all of the data to the
+   * peer. Consider using the @ref write function if you need to ensure that
+   * all data is written before the blocking operation completes.
+   *
+   * @par Example
+   * To write a single data buffer use the @ref buffer function as follows:
+   * @code
+   * basic_serial_port.write_some(asio::buffer(data, size));
+   * @endcode
+   * See the @ref buffer documentation for information on writing multiple
+   * buffers in one go, and how to use it with arrays, boost::array or
+   * std::vector.
+   */
+  template <typename ConstBufferSequence>
+  std::size_t write_some(const ConstBufferSequence& buffers)
+  {
+    asio::error_code ec;
+    std::size_t s = impl_.get_service().write_some(
+        impl_.get_implementation(), buffers, ec);
+    asio::detail::throw_error(ec, "write_some");
+    return s;
+  }
+
+  /// Write some data to the serial port.
+  /**
+   * This function is used to write data to the serial port. The function call
+   * will block until one or more bytes of the data has been written
+   * successfully, or until an error occurs.
+   *
+   * @param buffers One or more data buffers to be written to the serial port.
+   *
+   * @param ec Set to indicate what error occurred, if any.
+   *
+   * @returns The number of bytes written. Returns 0 if an error occurred.
+   *
+   * @note The write_some operation may not transmit all of the data to the
+   * peer. Consider using the @ref write function if you need to ensure that
+   * all data is written before the blocking operation completes.
+   */
+  template <typename ConstBufferSequence>
+  std::size_t write_some(const ConstBufferSequence& buffers,
+      asio::error_code& ec)
+  {
+    return impl_.get_service().write_some(
+        impl_.get_implementation(), buffers, ec);
+  }
+
+  /// Start an asynchronous write.
+  /**
+   * This function is used to asynchronously write data to the serial port.
+   * The function call always returns immediately.
+   *
+   * @param buffers One or more data buffers to be written to the serial port.
+   * Although the buffers object may be copied as necessary, ownership of the
+   * underlying memory blocks is retained by the caller, which must guarantee
+   * that they remain valid until the handler is called.
+   *
+   * @param handler The handler to be called when the write operation completes.
+   * Copies will be made of the handler as required. The function signature of
+   * the handler must be:
+   * @code void handler(
+   *   const asio::error_code& error, // Result of operation.
+   *   std::size_t bytes_transferred           // Number of bytes written.
+   * ); @endcode
+   * Regardless of whether the asynchronous operation completes immediately or
+   * not, the handler will not be invoked from within this function. On
+   * immediate completion, invocation of the handler will be performed in a
+   * manner equivalent to using asio::post().
+   *
+   * @note The write operation may not transmit all of the data to the peer.
+   * Consider using the @ref async_write function if you need to ensure that all
+   * data is written before the asynchronous operation completes.
+   *
+   * @par Example
+   * To write a single data buffer use the @ref buffer function as follows:
+   * @code
+   * basic_serial_port.async_write_some(
+   *     asio::buffer(data, size), handler);
+   * @endcode
+   * See the @ref buffer documentation for information on writing multiple
+   * buffers in one go, and how to use it with arrays, boost::array or
+   * std::vector.
+   */
+  template <typename ConstBufferSequence,
+      ASIO_COMPLETION_TOKEN_FOR(void (asio::error_code,
+        std::size_t)) WriteHandler
+          ASIO_DEFAULT_COMPLETION_TOKEN_TYPE(executor_type)>
+  ASIO_INITFN_AUTO_RESULT_TYPE(WriteHandler,
+      void (asio::error_code, std::size_t))
+  async_write_some(const ConstBufferSequence& buffers,
+      ASIO_MOVE_ARG(WriteHandler) handler
+        ASIO_DEFAULT_COMPLETION_TOKEN(executor_type))
+  {
+    return async_initiate<WriteHandler,
+      void (asio::error_code, std::size_t)>(
+        initiate_async_write_some(this), handler, buffers);
+  }
+
+  /// Read some data from the serial port.
+  /**
+   * This function is used to read data from the serial port. The function
+   * call will block until one or more bytes of data has been read successfully,
+   * or until an error occurs.
+   *
+   * @param buffers One or more buffers into which the data will be read.
+   *
+   * @returns The number of bytes read.
+   *
+   * @throws asio::system_error Thrown on failure. An error code of
+   * asio::error::eof indicates that the connection was closed by the
+   * peer.
+   *
+   * @note The read_some operation may not read all of the requested number of
+   * bytes. Consider using the @ref read function if you need to ensure that
+   * the requested amount of data is read before the blocking operation
+   * completes.
+   *
+   * @par Example
+   * To read into a single data buffer use the @ref buffer function as follows:
+   * @code
+   * basic_serial_port.read_some(asio::buffer(data, size));
+   * @endcode
+   * See the @ref buffer documentation for information on reading into multiple
+   * buffers in one go, and how to use it with arrays, boost::array or
+   * std::vector.
+   */
+  template <typename MutableBufferSequence>
+  std::size_t read_some(const MutableBufferSequence& buffers)
+  {
+    asio::error_code ec;
+    std::size_t s = impl_.get_service().read_some(
+        impl_.get_implementation(), buffers, ec);
+    asio::detail::throw_error(ec, "read_some");
+    return s;
+  }
+
+  /// Read some data from the serial port.
+  /**
+   * This function is used to read data from the serial port. The function
+   * call will block until one or more bytes of data has been read successfully,
+   * or until an error occurs.
+   *
+   * @param buffers One or more buffers into which the data will be read.
+   *
+   * @param ec Set to indicate what error occurred, if any.
+   *
+   * @returns The number of bytes read. Returns 0 if an error occurred.
+   *
+   * @note The read_some operation may not read all of the requested number of
+   * bytes. Consider using the @ref read function if you need to ensure that
+   * the requested amount of data is read before the blocking operation
+   * completes.
+   */
+  template <typename MutableBufferSequence>
+  std::size_t read_some(const MutableBufferSequence& buffers,
+      asio::error_code& ec)
+  {
+    return impl_.get_service().read_some(
+        impl_.get_implementation(), buffers, ec);
+  }
+
+  /// Start an asynchronous read.
+  /**
+   * This function is used to asynchronously read data from the serial port.
+   * The function call always returns immediately.
+   *
+   * @param buffers One or more buffers into which the data will be read.
+   * Although the buffers object may be copied as necessary, ownership of the
+   * underlying memory blocks is retained by the caller, which must guarantee
+   * that they remain valid until the handler is called.
+   *
+   * @param handler The handler to be called when the read operation completes.
+   * Copies will be made of the handler as required. The function signature of
+   * the handler must be:
+   * @code void handler(
+   *   const asio::error_code& error, // Result of operation.
+   *   std::size_t bytes_transferred           // Number of bytes read.
+   * ); @endcode
+   * Regardless of whether the asynchronous operation completes immediately or
+   * not, the handler will not be invoked from within this function. On
+   * immediate completion, invocation of the handler will be performed in a
+   * manner equivalent to using asio::post().
+   *
+   * @note The read operation may not read all of the requested number of bytes.
+   * Consider using the @ref async_read function if you need to ensure that the
+   * requested amount of data is read before the asynchronous operation
+   * completes.
+   *
+   * @par Example
+   * To read into a single data buffer use the @ref buffer function as follows:
+   * @code
+   * basic_serial_port.async_read_some(
+   *     asio::buffer(data, size), handler);
+   * @endcode
+   * See the @ref buffer documentation for information on reading into multiple
+   * buffers in one go, and how to use it with arrays, boost::array or
+   * std::vector.
+   */
+  template <typename MutableBufferSequence,
+      ASIO_COMPLETION_TOKEN_FOR(void (asio::error_code,
+        std::size_t)) ReadHandler
+          ASIO_DEFAULT_COMPLETION_TOKEN_TYPE(executor_type)>
+  ASIO_INITFN_AUTO_RESULT_TYPE(ReadHandler,
+      void (asio::error_code, std::size_t))
+  async_read_some(const MutableBufferSequence& buffers,
+      ASIO_MOVE_ARG(ReadHandler) handler
+        ASIO_DEFAULT_COMPLETION_TOKEN(executor_type))
+  {
+    return async_initiate<ReadHandler,
+      void (asio::error_code, std::size_t)>(
+        initiate_async_read_some(this), handler, buffers);
+  }
+
+private:
+  // Disallow copying and assignment.
+  basic_serial_port(const basic_serial_port&) ASIO_DELETED;
+  basic_serial_port& operator=(const basic_serial_port&) ASIO_DELETED;
+
+  class initiate_async_write_some
+  {
+  public:
+    typedef Executor executor_type;
+
+    explicit initiate_async_write_some(basic_serial_port* self)
+      : self_(self)
+    {
+    }
+
+    executor_type get_executor() const ASIO_NOEXCEPT
+    {
+      return self_->get_executor();
+    }
+
+    template <typename WriteHandler, typename ConstBufferSequence>
+    void operator()(ASIO_MOVE_ARG(WriteHandler) handler,
+        const ConstBufferSequence& buffers) const
+    {
+      // If you get an error on the following line it means that your handler
+      // does not meet the documented type requirements for a WriteHandler.
+      ASIO_WRITE_HANDLER_CHECK(WriteHandler, handler) type_check;
+
+      detail::non_const_lvalue<WriteHandler> handler2(handler);
+      self_->impl_.get_service().async_write_some(
+          self_->impl_.get_implementation(), buffers,
+          handler2.value, self_->impl_.get_executor());
+    }
+
+  private:
+    basic_serial_port* self_;
+  };
+
+  class initiate_async_read_some
+  {
+  public:
+    typedef Executor executor_type;
+
+    explicit initiate_async_read_some(basic_serial_port* self)
+      : self_(self)
+    {
+    }
+
+    executor_type get_executor() const ASIO_NOEXCEPT
+    {
+      return self_->get_executor();
+    }
+
+    template <typename ReadHandler, typename MutableBufferSequence>
+    void operator()(ASIO_MOVE_ARG(ReadHandler) handler,
+        const MutableBufferSequence& buffers) const
+    {
+      // If you get an error on the following line it means that your handler
+      // does not meet the documented type requirements for a ReadHandler.
+      ASIO_READ_HANDLER_CHECK(ReadHandler, handler) type_check;
+
+      detail::non_const_lvalue<ReadHandler> handler2(handler);
+      self_->impl_.get_service().async_read_some(
+          self_->impl_.get_implementation(), buffers,
+          handler2.value, self_->impl_.get_executor());
+    }
+
+  private:
+    basic_serial_port* self_;
+  };
+
+#if defined(ASIO_HAS_IOCP)
+  detail::io_object_impl<detail::win_iocp_serial_port_service, Executor> impl_;
+#else
+  detail::io_object_impl<detail::reactive_serial_port_service, Executor> impl_;
+#endif
+};
+
+} // namespace asio
+
+#include "asio/detail/pop_options.hpp"
+
+#endif // defined(ASIO_HAS_SERIAL_PORT)
+       //   || defined(GENERATING_DOCUMENTATION)
+
+#endif // ASIO_BASIC_SERIAL_PORT_HPP

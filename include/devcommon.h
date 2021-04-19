@@ -15,8 +15,16 @@
 #include <string>
 #include <fstream>
 #include <filesystem>
+#include <mutex>
+#include <thread>
+#include <sstream>
+#include <unistd.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <functional>
 
-#include "spdlog/logger.h"
+
 #include "pugixml.hpp"
 
 

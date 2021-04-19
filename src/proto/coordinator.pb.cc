@@ -14,7 +14,17 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_coordinator_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodesLocation_coordinator_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_coordinator_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeId_coordinator_2eproto;
 namespace coordinator {
+class StripeIdWithHintDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StripeIdWithHint> _instance;
+} _StripeIdWithHint_default_instance_;
+class NodesLocationDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NodesLocation> _instance;
+} _NodesLocation_default_instance_;
 class StripeIdDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StripeId> _instance;
@@ -35,7 +45,43 @@ class RequestResultDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RequestResult> _instance;
 } _RequestResult_default_instance_;
+class ListAllStripeCMDDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListAllStripeCMD> _instance;
+} _ListAllStripeCMD_default_instance_;
+class TransitionUpCMDDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TransitionUpCMD> _instance;
+} _TransitionUpCMD_default_instance_;
 }  // namespace coordinator
+static void InitDefaultsscc_info_ListAllStripeCMD_coordinator_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::coordinator::_ListAllStripeCMD_default_instance_;
+    new (ptr) ::coordinator::ListAllStripeCMD();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::coordinator::ListAllStripeCMD::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListAllStripeCMD_coordinator_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListAllStripeCMD_coordinator_2eproto}, {}};
+
+static void InitDefaultsscc_info_NodesLocation_coordinator_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::coordinator::_NodesLocation_default_instance_;
+    new (ptr) ::coordinator::NodesLocation();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::coordinator::NodesLocation::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodesLocation_coordinator_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_NodesLocation_coordinator_2eproto}, {}};
+
 static void InitDefaultsscc_info_Path_coordinator_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -78,6 +124,22 @@ static void InitDefaultsscc_info_StripeId_coordinator_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeId_coordinator_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StripeId_coordinator_2eproto}, {}};
 
+static void InitDefaultsscc_info_StripeIdWithHint_coordinator_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::coordinator::_StripeIdWithHint_default_instance_;
+    new (ptr) ::coordinator::StripeIdWithHint();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::coordinator::StripeIdWithHint::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_StripeIdWithHint_coordinator_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_StripeIdWithHint_coordinator_2eproto}, {
+      &scc_info_StripeId_coordinator_2eproto.base,
+      &scc_info_NodesLocation_coordinator_2eproto.base,}};
+
 static void InitDefaultsscc_info_StripeInfo_coordinator_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -106,11 +168,38 @@ static void InitDefaultsscc_info_StripeLocation_coordinator_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeLocation_coordinator_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StripeLocation_coordinator_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_coordinator_2eproto[5];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_coordinator_2eproto = nullptr;
+static void InitDefaultsscc_info_TransitionUpCMD_coordinator_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::coordinator::_TransitionUpCMD_default_instance_;
+    new (ptr) ::coordinator::TransitionUpCMD();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::coordinator::TransitionUpCMD::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TransitionUpCMD_coordinator_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TransitionUpCMD_coordinator_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_coordinator_2eproto[9];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_coordinator_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_coordinator_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_coordinator_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::coordinator::StripeIdWithHint, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::coordinator::StripeIdWithHint, stripeid_),
+  PROTOBUF_FIELD_OFFSET(::coordinator::StripeIdWithHint, badlocations_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::coordinator::NodesLocation, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::coordinator::NodesLocation, nodesuri_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::coordinator::StripeId, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -146,61 +235,571 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_coordinator_2eproto::offsets[]
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::coordinator::RequestResult, trueorfalse_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::coordinator::ListAllStripeCMD, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::coordinator::TransitionUpCMD, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::coordinator::TransitionUpCMD, mode_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::coordinator::StripeId)},
-  { 6, -1, sizeof(::coordinator::StripeInfo)},
-  { 15, -1, sizeof(::coordinator::StripeLocation)},
-  { 23, -1, sizeof(::coordinator::Path)},
-  { 29, -1, sizeof(::coordinator::RequestResult)},
+  { 0, -1, sizeof(::coordinator::StripeIdWithHint)},
+  { 7, -1, sizeof(::coordinator::NodesLocation)},
+  { 13, -1, sizeof(::coordinator::StripeId)},
+  { 19, -1, sizeof(::coordinator::StripeInfo)},
+  { 28, -1, sizeof(::coordinator::StripeLocation)},
+  { 36, -1, sizeof(::coordinator::Path)},
+  { 42, -1, sizeof(::coordinator::RequestResult)},
+  { 48, -1, sizeof(::coordinator::ListAllStripeCMD)},
+  { 53, -1, sizeof(::coordinator::TransitionUpCMD)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_StripeIdWithHint_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_NodesLocation_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_StripeId_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_StripeInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_StripeLocation_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_Path_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_RequestResult_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_ListAllStripeCMD_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::coordinator::_TransitionUpCMD_default_instance_),
 };
 
 const char descriptor_table_protodef_coordinator_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021coordinator.proto\022\013coordinator\"\034\n\010Stri"
-  "peId\022\020\n\010stripeid\030\001 \001(\005\"T\n\nStripeInfo\022\020\n\010"
-  "stripeid\030\001 \001(\005\022\020\n\010stripe_k\030\002 \001(\005\022\020\n\010stri"
-  "pe_l\030\003 \001(\005\022\020\n\010stripe_g\030\004 \001(\005\"R\n\016StripeLo"
-  "cation\022\017\n\007dataLoc\030\001 \003(\t\022\026\n\016localparityLo"
-  "c\030\002 \003(\t\022\027\n\017globalparityLoc\030\003 \003(\t\"\027\n\004Path"
-  "\022\017\n\007dstpath\030\001 \001(\t\"$\n\rRequestResult\022\023\n\013tr"
-  "ueorfalse\030\001 \001(\0102\227\002\n\nFileSystem\022:\n\tcreate"
-  "Dir\022\021.coordinator.Path\032\032.coordinator.Req"
-  "uestResult\022D\n\014uploadStripe\022\027.coordinator"
-  ".StripeInfo\032\033.coordinator.StripeLocation"
-  "\022D\n\016downloadStripe\022\025.coordinator.StripeI"
-  "d\032\033.coordinator.StripeLocation\022A\n\014delete"
-  "Stripe\022\025.coordinator.StripeId\032\032.coordina"
-  "tor.RequestResultb\006proto3"
+  "\n\021coordinator.proto\022\013coordinator\"m\n\020Stri"
+  "peIdWithHint\022\'\n\010stripeid\030\001 \001(\0132\025.coordin"
+  "ator.StripeId\0220\n\014badlocations\030\002 \001(\0132\032.co"
+  "ordinator.NodesLocation\"!\n\rNodesLocation"
+  "\022\020\n\010NodesUri\030\001 \003(\t\"\034\n\010StripeId\022\020\n\010stripe"
+  "id\030\001 \001(\005\"T\n\nStripeInfo\022\020\n\010stripeid\030\001 \001(\005"
+  "\022\020\n\010stripe_k\030\002 \001(\005\022\020\n\010stripe_l\030\003 \001(\005\022\020\n\010"
+  "stripe_g\030\004 \001(\005\"R\n\016StripeLocation\022\017\n\007data"
+  "Loc\030\001 \003(\t\022\026\n\016localparityLoc\030\002 \003(\t\022\027\n\017glo"
+  "balparityLoc\030\003 \003(\t\"\027\n\004Path\022\017\n\007dstpath\030\001 "
+  "\001(\t\"$\n\rRequestResult\022\023\n\013trueorfalse\030\001 \001("
+  "\010\"\022\n\020ListAllStripeCMD\"s\n\017TransitionUpCMD"
+  "\022/\n\004mode\030\001 \001(\0162!.coordinator.TransitionU"
+  "pCMD.MODE\"/\n\004MODE\022\t\n\005BASIC\020\000\022\016\n\nBASIC_PA"
+  "RT\020\001\022\014\n\010DESIGNED\020\0022\327\005\n\nFileSystem\022:\n\tcre"
+  "ateDir\022\021.coordinator.Path\032\032.coordinator."
+  "RequestResult\022D\n\014uploadStripe\022\027.coordina"
+  "tor.StripeInfo\032\033.coordinator.StripeLocat"
+  "ion\022D\n\016downloadStripe\022\025.coordinator.Stri"
+  "peId\032\033.coordinator.StripeLocation\022T\n\026dow"
+  "nloadStripeWithHint\022\035.coordinator.Stripe"
+  "IdWithHint\032\033.coordinator.StripeLocation\022"
+  "A\n\014deleteStripe\022\025.coordinator.StripeId\032\032"
+  ".coordinator.RequestResult\022B\n\013uploadChec"
+  "k\022\027.coordinator.StripeInfo\032\032.coordinator"
+  ".RequestResult\022H\n\023reportblocktransfer\022\025."
+  "coordinator.StripeId\032\032.coordinator.Reque"
+  "stResult\022@\n\nlistStripe\022\025.coordinator.Str"
+  "ipeId\032\033.coordinator.StripeLocation\022N\n\016li"
+  "stAllStripes\022\035.coordinator.ListAllStripe"
+  "CMD\032\033.coordinator.StripeLocation0\001\022H\n\014tr"
+  "ansitionup\022\034.coordinator.TransitionUpCMD"
+  "\032\032.coordinator.RequestResult2\016\n\014FromData"
+  "Nodeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_coordinator_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_coordinator_2eproto_sccs[5] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_coordinator_2eproto_sccs[9] = {
+  &scc_info_ListAllStripeCMD_coordinator_2eproto.base,
+  &scc_info_NodesLocation_coordinator_2eproto.base,
   &scc_info_Path_coordinator_2eproto.base,
   &scc_info_RequestResult_coordinator_2eproto.base,
   &scc_info_StripeId_coordinator_2eproto.base,
+  &scc_info_StripeIdWithHint_coordinator_2eproto.base,
   &scc_info_StripeInfo_coordinator_2eproto.base,
   &scc_info_StripeLocation_coordinator_2eproto.base,
+  &scc_info_TransitionUpCMD_coordinator_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_coordinator_2eproto_once;
 static bool descriptor_table_coordinator_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_coordinator_2eproto = {
-  &descriptor_table_coordinator_2eproto_initialized, descriptor_table_protodef_coordinator_2eproto, "coordinator.proto", 585,
-  &descriptor_table_coordinator_2eproto_once, descriptor_table_coordinator_2eproto_sccs, descriptor_table_coordinator_2eproto_deps, 5, 0,
+  &descriptor_table_coordinator_2eproto_initialized, descriptor_table_protodef_coordinator_2eproto, "coordinator.proto", 1332,
+  &descriptor_table_coordinator_2eproto_once, descriptor_table_coordinator_2eproto_sccs, descriptor_table_coordinator_2eproto_deps, 9, 0,
   schemas, file_default_instances, TableStruct_coordinator_2eproto::offsets,
-  file_level_metadata_coordinator_2eproto, 5, file_level_enum_descriptors_coordinator_2eproto, file_level_service_descriptors_coordinator_2eproto,
+  file_level_metadata_coordinator_2eproto, 9, file_level_enum_descriptors_coordinator_2eproto, file_level_service_descriptors_coordinator_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_coordinator_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_coordinator_2eproto), true);
 namespace coordinator {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TransitionUpCMD_MODE_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_coordinator_2eproto);
+  return file_level_enum_descriptors_coordinator_2eproto[0];
+}
+bool TransitionUpCMD_MODE_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr TransitionUpCMD_MODE TransitionUpCMD::BASIC;
+constexpr TransitionUpCMD_MODE TransitionUpCMD::BASIC_PART;
+constexpr TransitionUpCMD_MODE TransitionUpCMD::DESIGNED;
+constexpr TransitionUpCMD_MODE TransitionUpCMD::MODE_MIN;
+constexpr TransitionUpCMD_MODE TransitionUpCMD::MODE_MAX;
+constexpr int TransitionUpCMD::MODE_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+
+// ===================================================================
+
+void StripeIdWithHint::InitAsDefaultInstance() {
+  ::coordinator::_StripeIdWithHint_default_instance_._instance.get_mutable()->stripeid_ = const_cast< ::coordinator::StripeId*>(
+      ::coordinator::StripeId::internal_default_instance());
+  ::coordinator::_StripeIdWithHint_default_instance_._instance.get_mutable()->badlocations_ = const_cast< ::coordinator::NodesLocation*>(
+      ::coordinator::NodesLocation::internal_default_instance());
+}
+class StripeIdWithHint::_Internal {
+ public:
+  static const ::coordinator::StripeId& stripeid(const StripeIdWithHint* msg);
+  static const ::coordinator::NodesLocation& badlocations(const StripeIdWithHint* msg);
+};
+
+const ::coordinator::StripeId&
+StripeIdWithHint::_Internal::stripeid(const StripeIdWithHint* msg) {
+  return *msg->stripeid_;
+}
+const ::coordinator::NodesLocation&
+StripeIdWithHint::_Internal::badlocations(const StripeIdWithHint* msg) {
+  return *msg->badlocations_;
+}
+StripeIdWithHint::StripeIdWithHint()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:coordinator.StripeIdWithHint)
+}
+StripeIdWithHint::StripeIdWithHint(const StripeIdWithHint& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_stripeid()) {
+    stripeid_ = new ::coordinator::StripeId(*from.stripeid_);
+  } else {
+    stripeid_ = nullptr;
+  }
+  if (from._internal_has_badlocations()) {
+    badlocations_ = new ::coordinator::NodesLocation(*from.badlocations_);
+  } else {
+    badlocations_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:coordinator.StripeIdWithHint)
+}
+
+void StripeIdWithHint::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_StripeIdWithHint_coordinator_2eproto.base);
+  ::memset(&stripeid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&badlocations_) -
+      reinterpret_cast<char*>(&stripeid_)) + sizeof(badlocations_));
+}
+
+StripeIdWithHint::~StripeIdWithHint() {
+  // @@protoc_insertion_point(destructor:coordinator.StripeIdWithHint)
+  SharedDtor();
+}
+
+void StripeIdWithHint::SharedDtor() {
+  if (this != internal_default_instance()) delete stripeid_;
+  if (this != internal_default_instance()) delete badlocations_;
+}
+
+void StripeIdWithHint::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const StripeIdWithHint& StripeIdWithHint::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StripeIdWithHint_coordinator_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void StripeIdWithHint::Clear() {
+// @@protoc_insertion_point(message_clear_start:coordinator.StripeIdWithHint)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && stripeid_ != nullptr) {
+    delete stripeid_;
+  }
+  stripeid_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && badlocations_ != nullptr) {
+    delete badlocations_;
+  }
+  badlocations_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+const char* StripeIdWithHint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .coordinator.StripeId stripeid = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_stripeid(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .coordinator.NodesLocation badlocations = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_badlocations(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* StripeIdWithHint::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:coordinator.StripeIdWithHint)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .coordinator.StripeId stripeid = 1;
+  if (this->has_stripeid()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::stripeid(this), target, stream);
+  }
+
+  // .coordinator.NodesLocation badlocations = 2;
+  if (this->has_badlocations()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::badlocations(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:coordinator.StripeIdWithHint)
+  return target;
+}
+
+size_t StripeIdWithHint::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:coordinator.StripeIdWithHint)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .coordinator.StripeId stripeid = 1;
+  if (this->has_stripeid()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *stripeid_);
+  }
+
+  // .coordinator.NodesLocation badlocations = 2;
+  if (this->has_badlocations()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *badlocations_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void StripeIdWithHint::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:coordinator.StripeIdWithHint)
+  GOOGLE_DCHECK_NE(&from, this);
+  const StripeIdWithHint* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StripeIdWithHint>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:coordinator.StripeIdWithHint)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:coordinator.StripeIdWithHint)
+    MergeFrom(*source);
+  }
+}
+
+void StripeIdWithHint::MergeFrom(const StripeIdWithHint& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:coordinator.StripeIdWithHint)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_stripeid()) {
+    _internal_mutable_stripeid()->::coordinator::StripeId::MergeFrom(from._internal_stripeid());
+  }
+  if (from.has_badlocations()) {
+    _internal_mutable_badlocations()->::coordinator::NodesLocation::MergeFrom(from._internal_badlocations());
+  }
+}
+
+void StripeIdWithHint::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:coordinator.StripeIdWithHint)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StripeIdWithHint::CopyFrom(const StripeIdWithHint& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:coordinator.StripeIdWithHint)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StripeIdWithHint::IsInitialized() const {
+  return true;
+}
+
+void StripeIdWithHint::InternalSwap(StripeIdWithHint* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(stripeid_, other->stripeid_);
+  swap(badlocations_, other->badlocations_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StripeIdWithHint::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void NodesLocation::InitAsDefaultInstance() {
+}
+class NodesLocation::_Internal {
+ public:
+};
+
+NodesLocation::NodesLocation()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:coordinator.NodesLocation)
+}
+NodesLocation::NodesLocation(const NodesLocation& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      nodesuri_(from.nodesuri_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:coordinator.NodesLocation)
+}
+
+void NodesLocation::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NodesLocation_coordinator_2eproto.base);
+}
+
+NodesLocation::~NodesLocation() {
+  // @@protoc_insertion_point(destructor:coordinator.NodesLocation)
+  SharedDtor();
+}
+
+void NodesLocation::SharedDtor() {
+}
+
+void NodesLocation::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const NodesLocation& NodesLocation::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NodesLocation_coordinator_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void NodesLocation::Clear() {
+// @@protoc_insertion_point(message_clear_start:coordinator.NodesLocation)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  nodesuri_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* NodesLocation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated string NodesUri = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_nodesuri();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "coordinator.NodesLocation.NodesUri"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* NodesLocation::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:coordinator.NodesLocation)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string NodesUri = 1;
+  for (int i = 0, n = this->_internal_nodesuri_size(); i < n; i++) {
+    const auto& s = this->_internal_nodesuri(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "coordinator.NodesLocation.NodesUri");
+    target = stream->WriteString(1, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:coordinator.NodesLocation)
+  return target;
+}
+
+size_t NodesLocation::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:coordinator.NodesLocation)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string NodesUri = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(nodesuri_.size());
+  for (int i = 0, n = nodesuri_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      nodesuri_.Get(i));
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void NodesLocation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:coordinator.NodesLocation)
+  GOOGLE_DCHECK_NE(&from, this);
+  const NodesLocation* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<NodesLocation>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:coordinator.NodesLocation)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:coordinator.NodesLocation)
+    MergeFrom(*source);
+  }
+}
+
+void NodesLocation::MergeFrom(const NodesLocation& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:coordinator.NodesLocation)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  nodesuri_.MergeFrom(from.nodesuri_);
+}
+
+void NodesLocation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:coordinator.NodesLocation)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void NodesLocation::CopyFrom(const NodesLocation& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:coordinator.NodesLocation)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NodesLocation::IsInitialized() const {
+  return true;
+}
+
+void NodesLocation::InternalSwap(NodesLocation* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  nodesuri_.InternalSwap(&other->nodesuri_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata NodesLocation::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 
 // ===================================================================
 
@@ -1303,9 +1902,356 @@ void RequestResult::InternalSwap(RequestResult* other) {
 }
 
 
+// ===================================================================
+
+void ListAllStripeCMD::InitAsDefaultInstance() {
+}
+class ListAllStripeCMD::_Internal {
+ public:
+};
+
+ListAllStripeCMD::ListAllStripeCMD()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:coordinator.ListAllStripeCMD)
+}
+ListAllStripeCMD::ListAllStripeCMD(const ListAllStripeCMD& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:coordinator.ListAllStripeCMD)
+}
+
+void ListAllStripeCMD::SharedCtor() {
+}
+
+ListAllStripeCMD::~ListAllStripeCMD() {
+  // @@protoc_insertion_point(destructor:coordinator.ListAllStripeCMD)
+  SharedDtor();
+}
+
+void ListAllStripeCMD::SharedDtor() {
+}
+
+void ListAllStripeCMD::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListAllStripeCMD& ListAllStripeCMD::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListAllStripeCMD_coordinator_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListAllStripeCMD::Clear() {
+// @@protoc_insertion_point(message_clear_start:coordinator.ListAllStripeCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* ListAllStripeCMD::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListAllStripeCMD::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:coordinator.ListAllStripeCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:coordinator.ListAllStripeCMD)
+  return target;
+}
+
+size_t ListAllStripeCMD::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:coordinator.ListAllStripeCMD)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListAllStripeCMD::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:coordinator.ListAllStripeCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListAllStripeCMD* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListAllStripeCMD>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:coordinator.ListAllStripeCMD)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:coordinator.ListAllStripeCMD)
+    MergeFrom(*source);
+  }
+}
+
+void ListAllStripeCMD::MergeFrom(const ListAllStripeCMD& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:coordinator.ListAllStripeCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ListAllStripeCMD::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:coordinator.ListAllStripeCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListAllStripeCMD::CopyFrom(const ListAllStripeCMD& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:coordinator.ListAllStripeCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListAllStripeCMD::IsInitialized() const {
+  return true;
+}
+
+void ListAllStripeCMD::InternalSwap(ListAllStripeCMD* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListAllStripeCMD::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void TransitionUpCMD::InitAsDefaultInstance() {
+}
+class TransitionUpCMD::_Internal {
+ public:
+};
+
+TransitionUpCMD::TransitionUpCMD()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:coordinator.TransitionUpCMD)
+}
+TransitionUpCMD::TransitionUpCMD(const TransitionUpCMD& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  mode_ = from.mode_;
+  // @@protoc_insertion_point(copy_constructor:coordinator.TransitionUpCMD)
+}
+
+void TransitionUpCMD::SharedCtor() {
+  mode_ = 0;
+}
+
+TransitionUpCMD::~TransitionUpCMD() {
+  // @@protoc_insertion_point(destructor:coordinator.TransitionUpCMD)
+  SharedDtor();
+}
+
+void TransitionUpCMD::SharedDtor() {
+}
+
+void TransitionUpCMD::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TransitionUpCMD& TransitionUpCMD::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TransitionUpCMD_coordinator_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TransitionUpCMD::Clear() {
+// @@protoc_insertion_point(message_clear_start:coordinator.TransitionUpCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  mode_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* TransitionUpCMD::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .coordinator.TransitionUpCMD.MODE mode = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_mode(static_cast<::coordinator::TransitionUpCMD_MODE>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TransitionUpCMD::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:coordinator.TransitionUpCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .coordinator.TransitionUpCMD.MODE mode = 1;
+  if (this->mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_mode(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:coordinator.TransitionUpCMD)
+  return target;
+}
+
+size_t TransitionUpCMD::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:coordinator.TransitionUpCMD)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .coordinator.TransitionUpCMD.MODE mode = 1;
+  if (this->mode() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_mode());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TransitionUpCMD::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:coordinator.TransitionUpCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TransitionUpCMD* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TransitionUpCMD>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:coordinator.TransitionUpCMD)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:coordinator.TransitionUpCMD)
+    MergeFrom(*source);
+  }
+}
+
+void TransitionUpCMD::MergeFrom(const TransitionUpCMD& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:coordinator.TransitionUpCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.mode() != 0) {
+    _internal_set_mode(from._internal_mode());
+  }
+}
+
+void TransitionUpCMD::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:coordinator.TransitionUpCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TransitionUpCMD::CopyFrom(const TransitionUpCMD& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:coordinator.TransitionUpCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransitionUpCMD::IsInitialized() const {
+  return true;
+}
+
+void TransitionUpCMD::InternalSwap(TransitionUpCMD* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(mode_, other->mode_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransitionUpCMD::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace coordinator
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::coordinator::StripeIdWithHint* Arena::CreateMaybeMessage< ::coordinator::StripeIdWithHint >(Arena* arena) {
+  return Arena::CreateInternal< ::coordinator::StripeIdWithHint >(arena);
+}
+template<> PROTOBUF_NOINLINE ::coordinator::NodesLocation* Arena::CreateMaybeMessage< ::coordinator::NodesLocation >(Arena* arena) {
+  return Arena::CreateInternal< ::coordinator::NodesLocation >(arena);
+}
 template<> PROTOBUF_NOINLINE ::coordinator::StripeId* Arena::CreateMaybeMessage< ::coordinator::StripeId >(Arena* arena) {
   return Arena::CreateInternal< ::coordinator::StripeId >(arena);
 }
@@ -1320,6 +2266,12 @@ template<> PROTOBUF_NOINLINE ::coordinator::Path* Arena::CreateMaybeMessage< ::c
 }
 template<> PROTOBUF_NOINLINE ::coordinator::RequestResult* Arena::CreateMaybeMessage< ::coordinator::RequestResult >(Arena* arena) {
   return Arena::CreateInternal< ::coordinator::RequestResult >(arena);
+}
+template<> PROTOBUF_NOINLINE ::coordinator::ListAllStripeCMD* Arena::CreateMaybeMessage< ::coordinator::ListAllStripeCMD >(Arena* arena) {
+  return Arena::CreateInternal< ::coordinator::ListAllStripeCMD >(arena);
+}
+template<> PROTOBUF_NOINLINE ::coordinator::TransitionUpCMD* Arena::CreateMaybeMessage< ::coordinator::TransitionUpCMD >(Arena* arena) {
+  return Arena::CreateInternal< ::coordinator::TransitionUpCMD >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

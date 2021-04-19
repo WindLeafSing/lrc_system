@@ -14,34 +14,2826 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-static constexpr ::PROTOBUF_NAMESPACE_ID::Metadata* file_level_metadata_datanode_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_datanode_2eproto = nullptr;
+extern PROTOBUF_INTERNAL_EXPORT_datanode_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Action_datanode_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_datanode_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodesLocation_datanode_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_datanode_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeInfo_datanode_2eproto;
+namespace datanode {
+class CheckaliveCMDDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CheckaliveCMD> _instance;
+} _CheckaliveCMD_default_instance_;
+class PullPerformPushCMDDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PullPerformPushCMD> _instance;
+} _PullPerformPushCMD_default_instance_;
+class StripeIdDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StripeId> _instance;
+} _StripeId_default_instance_;
+class StripeLocationDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StripeLocation> _instance;
+} _StripeLocation_default_instance_;
+class NodesLocationDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NodesLocation> _instance;
+} _NodesLocation_default_instance_;
+class ClearallstripeCMDDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClearallstripeCMD> _instance;
+} _ClearallstripeCMD_default_instance_;
+class PathDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Path> _instance;
+} _Path_default_instance_;
+class OPDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OP> _instance;
+} _OP_default_instance_;
+class ActionDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Action> _instance;
+} _Action_default_instance_;
+class StripeInfoDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StripeInfo> _instance;
+} _StripeInfo_default_instance_;
+class RequestResultDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RequestResult> _instance;
+} _RequestResult_default_instance_;
+}  // namespace datanode
+static void InitDefaultsscc_info_Action_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_Action_default_instance_;
+    new (ptr) ::datanode::Action();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::Action::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Action_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Action_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_CheckaliveCMD_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_CheckaliveCMD_default_instance_;
+    new (ptr) ::datanode::CheckaliveCMD();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::CheckaliveCMD::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CheckaliveCMD_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CheckaliveCMD_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_ClearallstripeCMD_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_ClearallstripeCMD_default_instance_;
+    new (ptr) ::datanode::ClearallstripeCMD();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::ClearallstripeCMD::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClearallstripeCMD_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClearallstripeCMD_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_NodesLocation_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_NodesLocation_default_instance_;
+    new (ptr) ::datanode::NodesLocation();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::NodesLocation::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodesLocation_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_NodesLocation_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_OP_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_OP_default_instance_;
+    new (ptr) ::datanode::OP();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::OP::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OP_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OP_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_Path_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_Path_default_instance_;
+    new (ptr) ::datanode::Path();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::Path::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Path_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Path_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_PullPerformPushCMD_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_PullPerformPushCMD_default_instance_;
+    new (ptr) ::datanode::PullPerformPushCMD();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::PullPerformPushCMD::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_PullPerformPushCMD_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_PullPerformPushCMD_datanode_2eproto}, {
+      &scc_info_NodesLocation_datanode_2eproto.base,
+      &scc_info_Action_datanode_2eproto.base,
+      &scc_info_StripeInfo_datanode_2eproto.base,}};
+
+static void InitDefaultsscc_info_RequestResult_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_RequestResult_default_instance_;
+    new (ptr) ::datanode::RequestResult();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::RequestResult::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RequestResult_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RequestResult_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_StripeId_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_StripeId_default_instance_;
+    new (ptr) ::datanode::StripeId();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::StripeId::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeId_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StripeId_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_StripeInfo_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_StripeInfo_default_instance_;
+    new (ptr) ::datanode::StripeInfo();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::StripeInfo::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeInfo_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StripeInfo_datanode_2eproto}, {}};
+
+static void InitDefaultsscc_info_StripeLocation_datanode_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datanode::_StripeLocation_default_instance_;
+    new (ptr) ::datanode::StripeLocation();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datanode::StripeLocation::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StripeLocation_datanode_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StripeLocation_datanode_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_datanode_2eproto[11];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_datanode_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_datanode_2eproto = nullptr;
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_datanode_2eproto::offsets[1] = {};
-static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_datanode_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::CheckaliveCMD, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::PullPerformPushCMD, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::PullPerformPushCMD, src_),
+  PROTOBUF_FIELD_OFFSET(::datanode::PullPerformPushCMD, op_),
+  PROTOBUF_FIELD_OFFSET(::datanode::PullPerformPushCMD, dst_),
+  PROTOBUF_FIELD_OFFSET(::datanode::PullPerformPushCMD, stripeinfo_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeId, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeId, stripeid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeLocation, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeLocation, dataloc_),
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeLocation, localparityloc_),
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeLocation, globalparityloc_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::NodesLocation, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::NodesLocation, nodesuri_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::ClearallstripeCMD, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::Path, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::Path, dstpath_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::OP, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::OP, from_),
+  PROTOBUF_FIELD_OFFSET(::datanode::OP, to_),
+  PROTOBUF_FIELD_OFFSET(::datanode::OP, op_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::Action, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::Action, op_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeInfo, stripeid_),
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeInfo, stripe_k_),
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeInfo, stripe_l_),
+  PROTOBUF_FIELD_OFFSET(::datanode::StripeInfo, stripe_g_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datanode::RequestResult, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datanode::RequestResult, trueorfalse_),
+};
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, sizeof(::datanode::CheckaliveCMD)},
+  { 5, -1, sizeof(::datanode::PullPerformPushCMD)},
+  { 14, -1, sizeof(::datanode::StripeId)},
+  { 20, -1, sizeof(::datanode::StripeLocation)},
+  { 28, -1, sizeof(::datanode::NodesLocation)},
+  { 34, -1, sizeof(::datanode::ClearallstripeCMD)},
+  { 39, -1, sizeof(::datanode::Path)},
+  { 45, -1, sizeof(::datanode::OP)},
+  { 53, -1, sizeof(::datanode::Action)},
+  { 59, -1, sizeof(::datanode::StripeInfo)},
+  { 68, -1, sizeof(::datanode::RequestResult)},
+};
+
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_CheckaliveCMD_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_PullPerformPushCMD_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_StripeId_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_StripeLocation_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_NodesLocation_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_ClearallstripeCMD_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_Path_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_OP_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_Action_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_StripeInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::datanode::_RequestResult_default_instance_),
+};
 
 const char descriptor_table_protodef_datanode_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016datanode.proto"
+  "\n\016datanode.proto\022\010datanode\"\017\n\rCheckalive"
+  "CMD\"\250\001\n\022PullPerformPushCMD\022$\n\003src\030\001 \001(\0132"
+  "\027.datanode.NodesLocation\022\034\n\002op\030\002 \001(\0132\020.d"
+  "atanode.Action\022$\n\003dst\030\003 \001(\0132\027.datanode.N"
+  "odesLocation\022(\n\nstripeinfo\030\004 \001(\0132\024.datan"
+  "ode.StripeInfo\"\034\n\010StripeId\022\020\n\010stripeid\030\001"
+  " \001(\005\"R\n\016StripeLocation\022\017\n\007dataLoc\030\001 \003(\t\022"
+  "\026\n\016localparityLoc\030\002 \003(\t\022\027\n\017globalparityL"
+  "oc\030\003 \003(\t\"!\n\rNodesLocation\022\020\n\010NodesUri\030\001 "
+  "\003(\t\"\023\n\021ClearallstripeCMD\"\027\n\004Path\022\017\n\007dstp"
+  "ath\030\001 \001(\t\"a\n\002OP\022\014\n\004from\030\001 \003(\t\022\n\n\002to\030\002 \003("
+  "\t\022\036\n\002op\030\003 \001(\0162\022.datanode.OP.CODEC\"!\n\005COD"
+  "EC\022\006\n\002NO\020\000\022\007\n\003XOR\020\001\022\007\n\003LRC\020\002\"\024\n\006Action\022\n"
+  "\n\002op\030\001 \001(\005\"T\n\nStripeInfo\022\020\n\010stripeid\030\001 \001"
+  "(\005\022\020\n\010stripe_k\030\002 \001(\005\022\020\n\010stripe_l\030\003 \001(\005\022\020"
+  "\n\010stripe_g\030\004 \001(\005\"$\n\rRequestResult\022\023\n\013tru"
+  "eorfalse\030\001 \001(\0102\016\n\014FromDataNode2\240\004\n\016FromC"
+  "oodinator\022B\n\023handleblocktransfer\022\022.datan"
+  "ode.StripeId\032\027.datanode.RequestResult\022>\n"
+  "\017handleblockpull\022\022.datanode.StripeId\032\027.d"
+  "atanode.RequestResult\022F\n\016clearallstripe\022"
+  "\033.datanode.ClearallstripeCMD\032\027.datanode."
+  "RequestResult\022C\n\017dolocallyrepair\022\027.datan"
+  "ode.NodesLocation\032\027.datanode.RequestResu"
+  "lt\022E\n\020docompleterepair\022\030.datanode.Stripe"
+  "Location\032\027.datanode.RequestResult\022:\n\013cle"
+  "arstripe\022\022.datanode.StripeId\032\027.datanode."
+  "RequestResult\022>\n\ncheckalive\022\027.datanode.C"
+  "heckaliveCMD\032\027.datanode.RequestResult\022:\n"
+  "\021pull_perform_push\022\014.datanode.OP\032\027.datan"
+  "ode.RequestResult2\014\n\nFromClientb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_datanode_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_datanode_2eproto_sccs[1] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_datanode_2eproto_sccs[11] = {
+  &scc_info_Action_datanode_2eproto.base,
+  &scc_info_CheckaliveCMD_datanode_2eproto.base,
+  &scc_info_ClearallstripeCMD_datanode_2eproto.base,
+  &scc_info_NodesLocation_datanode_2eproto.base,
+  &scc_info_OP_datanode_2eproto.base,
+  &scc_info_Path_datanode_2eproto.base,
+  &scc_info_PullPerformPushCMD_datanode_2eproto.base,
+  &scc_info_RequestResult_datanode_2eproto.base,
+  &scc_info_StripeId_datanode_2eproto.base,
+  &scc_info_StripeInfo_datanode_2eproto.base,
+  &scc_info_StripeLocation_datanode_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_datanode_2eproto_once;
 static bool descriptor_table_datanode_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_datanode_2eproto = {
-  &descriptor_table_datanode_2eproto_initialized, descriptor_table_protodef_datanode_2eproto, "datanode.proto", 16,
-  &descriptor_table_datanode_2eproto_once, descriptor_table_datanode_2eproto_sccs, descriptor_table_datanode_2eproto_deps, 0, 0,
+  &descriptor_table_datanode_2eproto_initialized, descriptor_table_protodef_datanode_2eproto, "datanode.proto", 1239,
+  &descriptor_table_datanode_2eproto_once, descriptor_table_datanode_2eproto_sccs, descriptor_table_datanode_2eproto_deps, 11, 0,
   schemas, file_default_instances, TableStruct_datanode_2eproto::offsets,
-  file_level_metadata_datanode_2eproto, 0, file_level_enum_descriptors_datanode_2eproto, file_level_service_descriptors_datanode_2eproto,
+  file_level_metadata_datanode_2eproto, 11, file_level_enum_descriptors_datanode_2eproto, file_level_service_descriptors_datanode_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_datanode_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_datanode_2eproto), true);
+namespace datanode {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OP_CODEC_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_datanode_2eproto);
+  return file_level_enum_descriptors_datanode_2eproto[0];
+}
+bool OP_CODEC_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr OP_CODEC OP::NO;
+constexpr OP_CODEC OP::XOR;
+constexpr OP_CODEC OP::LRC;
+constexpr OP_CODEC OP::CODEC_MIN;
+constexpr OP_CODEC OP::CODEC_MAX;
+constexpr int OP::CODEC_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+
+// ===================================================================
+
+void CheckaliveCMD::InitAsDefaultInstance() {
+}
+class CheckaliveCMD::_Internal {
+ public:
+};
+
+CheckaliveCMD::CheckaliveCMD()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.CheckaliveCMD)
+}
+CheckaliveCMD::CheckaliveCMD(const CheckaliveCMD& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:datanode.CheckaliveCMD)
+}
+
+void CheckaliveCMD::SharedCtor() {
+}
+
+CheckaliveCMD::~CheckaliveCMD() {
+  // @@protoc_insertion_point(destructor:datanode.CheckaliveCMD)
+  SharedDtor();
+}
+
+void CheckaliveCMD::SharedDtor() {
+}
+
+void CheckaliveCMD::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const CheckaliveCMD& CheckaliveCMD::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CheckaliveCMD_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void CheckaliveCMD::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.CheckaliveCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* CheckaliveCMD::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* CheckaliveCMD::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.CheckaliveCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.CheckaliveCMD)
+  return target;
+}
+
+size_t CheckaliveCMD::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.CheckaliveCMD)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CheckaliveCMD::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.CheckaliveCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CheckaliveCMD* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CheckaliveCMD>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.CheckaliveCMD)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.CheckaliveCMD)
+    MergeFrom(*source);
+  }
+}
+
+void CheckaliveCMD::MergeFrom(const CheckaliveCMD& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.CheckaliveCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void CheckaliveCMD::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.CheckaliveCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CheckaliveCMD::CopyFrom(const CheckaliveCMD& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.CheckaliveCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CheckaliveCMD::IsInitialized() const {
+  return true;
+}
+
+void CheckaliveCMD::InternalSwap(CheckaliveCMD* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CheckaliveCMD::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void PullPerformPushCMD::InitAsDefaultInstance() {
+  ::datanode::_PullPerformPushCMD_default_instance_._instance.get_mutable()->src_ = const_cast< ::datanode::NodesLocation*>(
+      ::datanode::NodesLocation::internal_default_instance());
+  ::datanode::_PullPerformPushCMD_default_instance_._instance.get_mutable()->op_ = const_cast< ::datanode::Action*>(
+      ::datanode::Action::internal_default_instance());
+  ::datanode::_PullPerformPushCMD_default_instance_._instance.get_mutable()->dst_ = const_cast< ::datanode::NodesLocation*>(
+      ::datanode::NodesLocation::internal_default_instance());
+  ::datanode::_PullPerformPushCMD_default_instance_._instance.get_mutable()->stripeinfo_ = const_cast< ::datanode::StripeInfo*>(
+      ::datanode::StripeInfo::internal_default_instance());
+}
+class PullPerformPushCMD::_Internal {
+ public:
+  static const ::datanode::NodesLocation& src(const PullPerformPushCMD* msg);
+  static const ::datanode::Action& op(const PullPerformPushCMD* msg);
+  static const ::datanode::NodesLocation& dst(const PullPerformPushCMD* msg);
+  static const ::datanode::StripeInfo& stripeinfo(const PullPerformPushCMD* msg);
+};
+
+const ::datanode::NodesLocation&
+PullPerformPushCMD::_Internal::src(const PullPerformPushCMD* msg) {
+  return *msg->src_;
+}
+const ::datanode::Action&
+PullPerformPushCMD::_Internal::op(const PullPerformPushCMD* msg) {
+  return *msg->op_;
+}
+const ::datanode::NodesLocation&
+PullPerformPushCMD::_Internal::dst(const PullPerformPushCMD* msg) {
+  return *msg->dst_;
+}
+const ::datanode::StripeInfo&
+PullPerformPushCMD::_Internal::stripeinfo(const PullPerformPushCMD* msg) {
+  return *msg->stripeinfo_;
+}
+PullPerformPushCMD::PullPerformPushCMD()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.PullPerformPushCMD)
+}
+PullPerformPushCMD::PullPerformPushCMD(const PullPerformPushCMD& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_src()) {
+    src_ = new ::datanode::NodesLocation(*from.src_);
+  } else {
+    src_ = nullptr;
+  }
+  if (from._internal_has_op()) {
+    op_ = new ::datanode::Action(*from.op_);
+  } else {
+    op_ = nullptr;
+  }
+  if (from._internal_has_dst()) {
+    dst_ = new ::datanode::NodesLocation(*from.dst_);
+  } else {
+    dst_ = nullptr;
+  }
+  if (from._internal_has_stripeinfo()) {
+    stripeinfo_ = new ::datanode::StripeInfo(*from.stripeinfo_);
+  } else {
+    stripeinfo_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:datanode.PullPerformPushCMD)
+}
+
+void PullPerformPushCMD::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PullPerformPushCMD_datanode_2eproto.base);
+  ::memset(&src_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&stripeinfo_) -
+      reinterpret_cast<char*>(&src_)) + sizeof(stripeinfo_));
+}
+
+PullPerformPushCMD::~PullPerformPushCMD() {
+  // @@protoc_insertion_point(destructor:datanode.PullPerformPushCMD)
+  SharedDtor();
+}
+
+void PullPerformPushCMD::SharedDtor() {
+  if (this != internal_default_instance()) delete src_;
+  if (this != internal_default_instance()) delete op_;
+  if (this != internal_default_instance()) delete dst_;
+  if (this != internal_default_instance()) delete stripeinfo_;
+}
+
+void PullPerformPushCMD::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PullPerformPushCMD& PullPerformPushCMD::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PullPerformPushCMD_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PullPerformPushCMD::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.PullPerformPushCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && src_ != nullptr) {
+    delete src_;
+  }
+  src_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && op_ != nullptr) {
+    delete op_;
+  }
+  op_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && dst_ != nullptr) {
+    delete dst_;
+  }
+  dst_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && stripeinfo_ != nullptr) {
+    delete stripeinfo_;
+  }
+  stripeinfo_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+const char* PullPerformPushCMD::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .datanode.NodesLocation src = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_src(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .datanode.Action op = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_op(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .datanode.NodesLocation dst = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_dst(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .datanode.StripeInfo stripeinfo = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_stripeinfo(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PullPerformPushCMD::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.PullPerformPushCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .datanode.NodesLocation src = 1;
+  if (this->has_src()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::src(this), target, stream);
+  }
+
+  // .datanode.Action op = 2;
+  if (this->has_op()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::op(this), target, stream);
+  }
+
+  // .datanode.NodesLocation dst = 3;
+  if (this->has_dst()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::dst(this), target, stream);
+  }
+
+  // .datanode.StripeInfo stripeinfo = 4;
+  if (this->has_stripeinfo()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::stripeinfo(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.PullPerformPushCMD)
+  return target;
+}
+
+size_t PullPerformPushCMD::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.PullPerformPushCMD)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .datanode.NodesLocation src = 1;
+  if (this->has_src()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *src_);
+  }
+
+  // .datanode.Action op = 2;
+  if (this->has_op()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *op_);
+  }
+
+  // .datanode.NodesLocation dst = 3;
+  if (this->has_dst()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *dst_);
+  }
+
+  // .datanode.StripeInfo stripeinfo = 4;
+  if (this->has_stripeinfo()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *stripeinfo_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PullPerformPushCMD::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.PullPerformPushCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PullPerformPushCMD* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PullPerformPushCMD>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.PullPerformPushCMD)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.PullPerformPushCMD)
+    MergeFrom(*source);
+  }
+}
+
+void PullPerformPushCMD::MergeFrom(const PullPerformPushCMD& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.PullPerformPushCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_src()) {
+    _internal_mutable_src()->::datanode::NodesLocation::MergeFrom(from._internal_src());
+  }
+  if (from.has_op()) {
+    _internal_mutable_op()->::datanode::Action::MergeFrom(from._internal_op());
+  }
+  if (from.has_dst()) {
+    _internal_mutable_dst()->::datanode::NodesLocation::MergeFrom(from._internal_dst());
+  }
+  if (from.has_stripeinfo()) {
+    _internal_mutable_stripeinfo()->::datanode::StripeInfo::MergeFrom(from._internal_stripeinfo());
+  }
+}
+
+void PullPerformPushCMD::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.PullPerformPushCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PullPerformPushCMD::CopyFrom(const PullPerformPushCMD& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.PullPerformPushCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PullPerformPushCMD::IsInitialized() const {
+  return true;
+}
+
+void PullPerformPushCMD::InternalSwap(PullPerformPushCMD* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(src_, other->src_);
+  swap(op_, other->op_);
+  swap(dst_, other->dst_);
+  swap(stripeinfo_, other->stripeinfo_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PullPerformPushCMD::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void StripeId::InitAsDefaultInstance() {
+}
+class StripeId::_Internal {
+ public:
+};
+
+StripeId::StripeId()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.StripeId)
+}
+StripeId::StripeId(const StripeId& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  stripeid_ = from.stripeid_;
+  // @@protoc_insertion_point(copy_constructor:datanode.StripeId)
+}
+
+void StripeId::SharedCtor() {
+  stripeid_ = 0;
+}
+
+StripeId::~StripeId() {
+  // @@protoc_insertion_point(destructor:datanode.StripeId)
+  SharedDtor();
+}
+
+void StripeId::SharedDtor() {
+}
+
+void StripeId::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const StripeId& StripeId::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StripeId_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void StripeId::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.StripeId)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  stripeid_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* StripeId::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 stripeid = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          stripeid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* StripeId::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.StripeId)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 stripeid = 1;
+  if (this->stripeid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_stripeid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.StripeId)
+  return target;
+}
+
+size_t StripeId::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.StripeId)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 stripeid = 1;
+  if (this->stripeid() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_stripeid());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void StripeId::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.StripeId)
+  GOOGLE_DCHECK_NE(&from, this);
+  const StripeId* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StripeId>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.StripeId)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.StripeId)
+    MergeFrom(*source);
+  }
+}
+
+void StripeId::MergeFrom(const StripeId& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.StripeId)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.stripeid() != 0) {
+    _internal_set_stripeid(from._internal_stripeid());
+  }
+}
+
+void StripeId::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.StripeId)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StripeId::CopyFrom(const StripeId& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.StripeId)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StripeId::IsInitialized() const {
+  return true;
+}
+
+void StripeId::InternalSwap(StripeId* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(stripeid_, other->stripeid_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StripeId::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void StripeLocation::InitAsDefaultInstance() {
+}
+class StripeLocation::_Internal {
+ public:
+};
+
+StripeLocation::StripeLocation()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.StripeLocation)
+}
+StripeLocation::StripeLocation(const StripeLocation& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      dataloc_(from.dataloc_),
+      localparityloc_(from.localparityloc_),
+      globalparityloc_(from.globalparityloc_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:datanode.StripeLocation)
+}
+
+void StripeLocation::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_StripeLocation_datanode_2eproto.base);
+}
+
+StripeLocation::~StripeLocation() {
+  // @@protoc_insertion_point(destructor:datanode.StripeLocation)
+  SharedDtor();
+}
+
+void StripeLocation::SharedDtor() {
+}
+
+void StripeLocation::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const StripeLocation& StripeLocation::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StripeLocation_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void StripeLocation::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.StripeLocation)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  dataloc_.Clear();
+  localparityloc_.Clear();
+  globalparityloc_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* StripeLocation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated string dataLoc = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_dataloc();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.StripeLocation.dataLoc"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated string localparityLoc = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_localparityloc();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.StripeLocation.localparityLoc"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated string globalparityLoc = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_globalparityloc();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.StripeLocation.globalparityLoc"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* StripeLocation::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.StripeLocation)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string dataLoc = 1;
+  for (int i = 0, n = this->_internal_dataloc_size(); i < n; i++) {
+    const auto& s = this->_internal_dataloc(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.StripeLocation.dataLoc");
+    target = stream->WriteString(1, s, target);
+  }
+
+  // repeated string localparityLoc = 2;
+  for (int i = 0, n = this->_internal_localparityloc_size(); i < n; i++) {
+    const auto& s = this->_internal_localparityloc(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.StripeLocation.localparityLoc");
+    target = stream->WriteString(2, s, target);
+  }
+
+  // repeated string globalparityLoc = 3;
+  for (int i = 0, n = this->_internal_globalparityloc_size(); i < n; i++) {
+    const auto& s = this->_internal_globalparityloc(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.StripeLocation.globalparityLoc");
+    target = stream->WriteString(3, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.StripeLocation)
+  return target;
+}
+
+size_t StripeLocation::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.StripeLocation)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string dataLoc = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(dataloc_.size());
+  for (int i = 0, n = dataloc_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      dataloc_.Get(i));
+  }
+
+  // repeated string localparityLoc = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(localparityloc_.size());
+  for (int i = 0, n = localparityloc_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      localparityloc_.Get(i));
+  }
+
+  // repeated string globalparityLoc = 3;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(globalparityloc_.size());
+  for (int i = 0, n = globalparityloc_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      globalparityloc_.Get(i));
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void StripeLocation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.StripeLocation)
+  GOOGLE_DCHECK_NE(&from, this);
+  const StripeLocation* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StripeLocation>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.StripeLocation)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.StripeLocation)
+    MergeFrom(*source);
+  }
+}
+
+void StripeLocation::MergeFrom(const StripeLocation& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.StripeLocation)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  dataloc_.MergeFrom(from.dataloc_);
+  localparityloc_.MergeFrom(from.localparityloc_);
+  globalparityloc_.MergeFrom(from.globalparityloc_);
+}
+
+void StripeLocation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.StripeLocation)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StripeLocation::CopyFrom(const StripeLocation& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.StripeLocation)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StripeLocation::IsInitialized() const {
+  return true;
+}
+
+void StripeLocation::InternalSwap(StripeLocation* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  dataloc_.InternalSwap(&other->dataloc_);
+  localparityloc_.InternalSwap(&other->localparityloc_);
+  globalparityloc_.InternalSwap(&other->globalparityloc_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StripeLocation::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void NodesLocation::InitAsDefaultInstance() {
+}
+class NodesLocation::_Internal {
+ public:
+};
+
+NodesLocation::NodesLocation()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.NodesLocation)
+}
+NodesLocation::NodesLocation(const NodesLocation& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      nodesuri_(from.nodesuri_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:datanode.NodesLocation)
+}
+
+void NodesLocation::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NodesLocation_datanode_2eproto.base);
+}
+
+NodesLocation::~NodesLocation() {
+  // @@protoc_insertion_point(destructor:datanode.NodesLocation)
+  SharedDtor();
+}
+
+void NodesLocation::SharedDtor() {
+}
+
+void NodesLocation::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const NodesLocation& NodesLocation::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NodesLocation_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void NodesLocation::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.NodesLocation)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  nodesuri_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* NodesLocation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated string NodesUri = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_nodesuri();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.NodesLocation.NodesUri"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* NodesLocation::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.NodesLocation)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string NodesUri = 1;
+  for (int i = 0, n = this->_internal_nodesuri_size(); i < n; i++) {
+    const auto& s = this->_internal_nodesuri(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.NodesLocation.NodesUri");
+    target = stream->WriteString(1, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.NodesLocation)
+  return target;
+}
+
+size_t NodesLocation::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.NodesLocation)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string NodesUri = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(nodesuri_.size());
+  for (int i = 0, n = nodesuri_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      nodesuri_.Get(i));
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void NodesLocation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.NodesLocation)
+  GOOGLE_DCHECK_NE(&from, this);
+  const NodesLocation* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<NodesLocation>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.NodesLocation)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.NodesLocation)
+    MergeFrom(*source);
+  }
+}
+
+void NodesLocation::MergeFrom(const NodesLocation& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.NodesLocation)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  nodesuri_.MergeFrom(from.nodesuri_);
+}
+
+void NodesLocation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.NodesLocation)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void NodesLocation::CopyFrom(const NodesLocation& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.NodesLocation)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NodesLocation::IsInitialized() const {
+  return true;
+}
+
+void NodesLocation::InternalSwap(NodesLocation* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  nodesuri_.InternalSwap(&other->nodesuri_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata NodesLocation::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void ClearallstripeCMD::InitAsDefaultInstance() {
+}
+class ClearallstripeCMD::_Internal {
+ public:
+};
+
+ClearallstripeCMD::ClearallstripeCMD()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.ClearallstripeCMD)
+}
+ClearallstripeCMD::ClearallstripeCMD(const ClearallstripeCMD& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:datanode.ClearallstripeCMD)
+}
+
+void ClearallstripeCMD::SharedCtor() {
+}
+
+ClearallstripeCMD::~ClearallstripeCMD() {
+  // @@protoc_insertion_point(destructor:datanode.ClearallstripeCMD)
+  SharedDtor();
+}
+
+void ClearallstripeCMD::SharedDtor() {
+}
+
+void ClearallstripeCMD::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ClearallstripeCMD& ClearallstripeCMD::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClearallstripeCMD_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ClearallstripeCMD::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.ClearallstripeCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* ClearallstripeCMD::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ClearallstripeCMD::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.ClearallstripeCMD)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.ClearallstripeCMD)
+  return target;
+}
+
+size_t ClearallstripeCMD::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.ClearallstripeCMD)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ClearallstripeCMD::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.ClearallstripeCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ClearallstripeCMD* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ClearallstripeCMD>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.ClearallstripeCMD)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.ClearallstripeCMD)
+    MergeFrom(*source);
+  }
+}
+
+void ClearallstripeCMD::MergeFrom(const ClearallstripeCMD& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.ClearallstripeCMD)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ClearallstripeCMD::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.ClearallstripeCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ClearallstripeCMD::CopyFrom(const ClearallstripeCMD& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.ClearallstripeCMD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClearallstripeCMD::IsInitialized() const {
+  return true;
+}
+
+void ClearallstripeCMD::InternalSwap(ClearallstripeCMD* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ClearallstripeCMD::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void Path::InitAsDefaultInstance() {
+}
+class Path::_Internal {
+ public:
+};
+
+Path::Path()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.Path)
+}
+Path::Path(const Path& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  dstpath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_dstpath().empty()) {
+    dstpath_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dstpath_);
+  }
+  // @@protoc_insertion_point(copy_constructor:datanode.Path)
+}
+
+void Path::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Path_datanode_2eproto.base);
+  dstpath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+Path::~Path() {
+  // @@protoc_insertion_point(destructor:datanode.Path)
+  SharedDtor();
+}
+
+void Path::SharedDtor() {
+  dstpath_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Path::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Path& Path::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Path_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Path::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.Path)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  dstpath_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+const char* Path::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string dstpath = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_dstpath();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.Path.dstpath"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Path::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.Path)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string dstpath = 1;
+  if (this->dstpath().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_dstpath().data(), static_cast<int>(this->_internal_dstpath().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.Path.dstpath");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_dstpath(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.Path)
+  return target;
+}
+
+size_t Path::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.Path)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string dstpath = 1;
+  if (this->dstpath().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_dstpath());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Path::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.Path)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Path* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Path>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.Path)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.Path)
+    MergeFrom(*source);
+  }
+}
+
+void Path::MergeFrom(const Path& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.Path)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.dstpath().size() > 0) {
+
+    dstpath_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dstpath_);
+  }
+}
+
+void Path::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.Path)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Path::CopyFrom(const Path& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.Path)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Path::IsInitialized() const {
+  return true;
+}
+
+void Path::InternalSwap(Path* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  dstpath_.Swap(&other->dstpath_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Path::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void OP::InitAsDefaultInstance() {
+}
+class OP::_Internal {
+ public:
+};
+
+OP::OP()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.OP)
+}
+OP::OP(const OP& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      from_(from.from_),
+      to_(from.to_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  op_ = from.op_;
+  // @@protoc_insertion_point(copy_constructor:datanode.OP)
+}
+
+void OP::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OP_datanode_2eproto.base);
+  op_ = 0;
+}
+
+OP::~OP() {
+  // @@protoc_insertion_point(destructor:datanode.OP)
+  SharedDtor();
+}
+
+void OP::SharedDtor() {
+}
+
+void OP::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OP& OP::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OP_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OP::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.OP)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  from_.Clear();
+  to_.Clear();
+  op_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* OP::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated string from = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_from();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.OP.from"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated string to = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_to();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "datanode.OP.to"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // .datanode.OP.CODEC op = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_op(static_cast<::datanode::OP_CODEC>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OP::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.OP)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string from = 1;
+  for (int i = 0, n = this->_internal_from_size(); i < n; i++) {
+    const auto& s = this->_internal_from(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.OP.from");
+    target = stream->WriteString(1, s, target);
+  }
+
+  // repeated string to = 2;
+  for (int i = 0, n = this->_internal_to_size(); i < n; i++) {
+    const auto& s = this->_internal_to(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "datanode.OP.to");
+    target = stream->WriteString(2, s, target);
+  }
+
+  // .datanode.OP.CODEC op = 3;
+  if (this->op() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_op(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.OP)
+  return target;
+}
+
+size_t OP::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.OP)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string from = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(from_.size());
+  for (int i = 0, n = from_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      from_.Get(i));
+  }
+
+  // repeated string to = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(to_.size());
+  for (int i = 0, n = to_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      to_.Get(i));
+  }
+
+  // .datanode.OP.CODEC op = 3;
+  if (this->op() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_op());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OP::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.OP)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OP* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OP>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.OP)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.OP)
+    MergeFrom(*source);
+  }
+}
+
+void OP::MergeFrom(const OP& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.OP)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  from_.MergeFrom(from.from_);
+  to_.MergeFrom(from.to_);
+  if (from.op() != 0) {
+    _internal_set_op(from._internal_op());
+  }
+}
+
+void OP::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.OP)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OP::CopyFrom(const OP& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.OP)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OP::IsInitialized() const {
+  return true;
+}
+
+void OP::InternalSwap(OP* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  from_.InternalSwap(&other->from_);
+  to_.InternalSwap(&other->to_);
+  swap(op_, other->op_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OP::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void Action::InitAsDefaultInstance() {
+}
+class Action::_Internal {
+ public:
+};
+
+Action::Action()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.Action)
+}
+Action::Action(const Action& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  op_ = from.op_;
+  // @@protoc_insertion_point(copy_constructor:datanode.Action)
+}
+
+void Action::SharedCtor() {
+  op_ = 0;
+}
+
+Action::~Action() {
+  // @@protoc_insertion_point(destructor:datanode.Action)
+  SharedDtor();
+}
+
+void Action::SharedDtor() {
+}
+
+void Action::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Action& Action::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Action_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Action::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.Action)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  op_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* Action::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 op = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          op_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Action::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.Action)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 op = 1;
+  if (this->op() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_op(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.Action)
+  return target;
+}
+
+size_t Action::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.Action)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 op = 1;
+  if (this->op() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_op());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Action::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.Action)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Action* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Action>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.Action)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.Action)
+    MergeFrom(*source);
+  }
+}
+
+void Action::MergeFrom(const Action& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.Action)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.op() != 0) {
+    _internal_set_op(from._internal_op());
+  }
+}
+
+void Action::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.Action)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Action::CopyFrom(const Action& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.Action)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Action::IsInitialized() const {
+  return true;
+}
+
+void Action::InternalSwap(Action* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(op_, other->op_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Action::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void StripeInfo::InitAsDefaultInstance() {
+}
+class StripeInfo::_Internal {
+ public:
+};
+
+StripeInfo::StripeInfo()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.StripeInfo)
+}
+StripeInfo::StripeInfo(const StripeInfo& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&stripeid_, &from.stripeid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&stripe_g_) -
+    reinterpret_cast<char*>(&stripeid_)) + sizeof(stripe_g_));
+  // @@protoc_insertion_point(copy_constructor:datanode.StripeInfo)
+}
+
+void StripeInfo::SharedCtor() {
+  ::memset(&stripeid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&stripe_g_) -
+      reinterpret_cast<char*>(&stripeid_)) + sizeof(stripe_g_));
+}
+
+StripeInfo::~StripeInfo() {
+  // @@protoc_insertion_point(destructor:datanode.StripeInfo)
+  SharedDtor();
+}
+
+void StripeInfo::SharedDtor() {
+}
+
+void StripeInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const StripeInfo& StripeInfo::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StripeInfo_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void StripeInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.StripeInfo)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&stripeid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&stripe_g_) -
+      reinterpret_cast<char*>(&stripeid_)) + sizeof(stripe_g_));
+  _internal_metadata_.Clear();
+}
+
+const char* StripeInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 stripeid = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          stripeid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 stripe_k = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          stripe_k_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 stripe_l = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          stripe_l_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 stripe_g = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          stripe_g_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* StripeInfo::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.StripeInfo)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 stripeid = 1;
+  if (this->stripeid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_stripeid(), target);
+  }
+
+  // int32 stripe_k = 2;
+  if (this->stripe_k() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_stripe_k(), target);
+  }
+
+  // int32 stripe_l = 3;
+  if (this->stripe_l() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_stripe_l(), target);
+  }
+
+  // int32 stripe_g = 4;
+  if (this->stripe_g() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_stripe_g(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.StripeInfo)
+  return target;
+}
+
+size_t StripeInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.StripeInfo)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 stripeid = 1;
+  if (this->stripeid() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_stripeid());
+  }
+
+  // int32 stripe_k = 2;
+  if (this->stripe_k() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_stripe_k());
+  }
+
+  // int32 stripe_l = 3;
+  if (this->stripe_l() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_stripe_l());
+  }
+
+  // int32 stripe_g = 4;
+  if (this->stripe_g() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_stripe_g());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void StripeInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.StripeInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  const StripeInfo* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StripeInfo>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.StripeInfo)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.StripeInfo)
+    MergeFrom(*source);
+  }
+}
+
+void StripeInfo::MergeFrom(const StripeInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.StripeInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.stripeid() != 0) {
+    _internal_set_stripeid(from._internal_stripeid());
+  }
+  if (from.stripe_k() != 0) {
+    _internal_set_stripe_k(from._internal_stripe_k());
+  }
+  if (from.stripe_l() != 0) {
+    _internal_set_stripe_l(from._internal_stripe_l());
+  }
+  if (from.stripe_g() != 0) {
+    _internal_set_stripe_g(from._internal_stripe_g());
+  }
+}
+
+void StripeInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.StripeInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StripeInfo::CopyFrom(const StripeInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.StripeInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StripeInfo::IsInitialized() const {
+  return true;
+}
+
+void StripeInfo::InternalSwap(StripeInfo* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(stripeid_, other->stripeid_);
+  swap(stripe_k_, other->stripe_k_);
+  swap(stripe_l_, other->stripe_l_);
+  swap(stripe_g_, other->stripe_g_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StripeInfo::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RequestResult::InitAsDefaultInstance() {
+}
+class RequestResult::_Internal {
+ public:
+};
+
+RequestResult::RequestResult()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datanode.RequestResult)
+}
+RequestResult::RequestResult(const RequestResult& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  trueorfalse_ = from.trueorfalse_;
+  // @@protoc_insertion_point(copy_constructor:datanode.RequestResult)
+}
+
+void RequestResult::SharedCtor() {
+  trueorfalse_ = false;
+}
+
+RequestResult::~RequestResult() {
+  // @@protoc_insertion_point(destructor:datanode.RequestResult)
+  SharedDtor();
+}
+
+void RequestResult::SharedDtor() {
+}
+
+void RequestResult::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RequestResult& RequestResult::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RequestResult_datanode_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RequestResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:datanode.RequestResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  trueorfalse_ = false;
+  _internal_metadata_.Clear();
+}
+
+const char* RequestResult::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bool trueorfalse = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          trueorfalse_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RequestResult::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datanode.RequestResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool trueorfalse = 1;
+  if (this->trueorfalse() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_trueorfalse(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datanode.RequestResult)
+  return target;
+}
+
+size_t RequestResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datanode.RequestResult)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool trueorfalse = 1;
+  if (this->trueorfalse() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RequestResult::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datanode.RequestResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RequestResult* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RequestResult>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datanode.RequestResult)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datanode.RequestResult)
+    MergeFrom(*source);
+  }
+}
+
+void RequestResult::MergeFrom(const RequestResult& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datanode.RequestResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.trueorfalse() != 0) {
+    _internal_set_trueorfalse(from._internal_trueorfalse());
+  }
+}
+
+void RequestResult::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datanode.RequestResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RequestResult::CopyFrom(const RequestResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datanode.RequestResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RequestResult::IsInitialized() const {
+  return true;
+}
+
+void RequestResult::InternalSwap(RequestResult* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(trueorfalse_, other->trueorfalse_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RequestResult::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace datanode
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::datanode::CheckaliveCMD* Arena::CreateMaybeMessage< ::datanode::CheckaliveCMD >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::CheckaliveCMD >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::PullPerformPushCMD* Arena::CreateMaybeMessage< ::datanode::PullPerformPushCMD >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::PullPerformPushCMD >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::StripeId* Arena::CreateMaybeMessage< ::datanode::StripeId >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::StripeId >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::StripeLocation* Arena::CreateMaybeMessage< ::datanode::StripeLocation >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::StripeLocation >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::NodesLocation* Arena::CreateMaybeMessage< ::datanode::NodesLocation >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::NodesLocation >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::ClearallstripeCMD* Arena::CreateMaybeMessage< ::datanode::ClearallstripeCMD >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::ClearallstripeCMD >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::Path* Arena::CreateMaybeMessage< ::datanode::Path >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::Path >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::OP* Arena::CreateMaybeMessage< ::datanode::OP >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::OP >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::Action* Arena::CreateMaybeMessage< ::datanode::Action >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::Action >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::StripeInfo* Arena::CreateMaybeMessage< ::datanode::StripeInfo >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::StripeInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datanode::RequestResult* Arena::CreateMaybeMessage< ::datanode::RequestResult >(Arena* arena) {
+  return Arena::CreateInternal< ::datanode::RequestResult >(arena);
+}
 PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
